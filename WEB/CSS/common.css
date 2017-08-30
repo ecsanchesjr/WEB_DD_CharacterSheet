@@ -1,0 +1,9 @@
+@FONT-FACE{
+    font-family: wild;
+    src:url("../fonts/fontTheWild.otf");
+}
+
+.title{
+    font-size: 100%;
+    font-family: wild;
+}

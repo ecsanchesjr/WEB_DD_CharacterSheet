@@ -1,9 +1,64 @@
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
 @FONT-FACE{
     font-family: wild;
     src:url("../fonts/fontTheWild.otf");
 }
 
+html,body {
+    width: 1280px;
+    margin: 1% auto;
+}
+
+input{
+    text-align: center;
+}
+
+@media screen and (max-width: 960px){
+    .medium-width{
+        width: 100%;
+    }
+    html,body {
+        width: 960px;
+    }
+    .border-all{
+        float: none;
+    }
+}
+
+#GOD{
+    background-color: #aee8ab;
+}
+
+
 .title{
-    font-size: 100%;
+    font-size: 60px;
     font-family: wild;
+}
+
+.clear{
+    clear: both;
+}
+
+.container-0{
+    border: 1px solid black;
+    width: 40%;
+    padding: 1%;
+    overflow: hidden;
+
+    float: left;
+    margin-left:5%;
+    text-align: center;
+
+}
+
+.subcontainer-0{
+    margin: 0 1% 1% 0;
 }

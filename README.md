@@ -12,3 +12,6 @@ Linguagens utilizadas para a primeira fase:
 * CSS
 
 # EM ANDAMENTO
+
+
+Acho válido usarmos os 3 tamanhos: 1280 -> 960 -> 640

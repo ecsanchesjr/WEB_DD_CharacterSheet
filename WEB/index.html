@@ -9,41 +9,46 @@
 </head>
 <body>
     <div id="GOD">
-        <div id="divCharInfos" class="container-0">
-            <h1>Dungeons & Dragons</h1>
-            <div>
-                <div>
-                    <div><input></div>
-                    <div><label>Nome</label></div>
+            <div name="div_charInfos1" class="container container-0">
+                <h1 class="title">Dungeons & Dragons</h1>
+                <div class="subcontainer subcontainer-0">
+                    <input class="info-inputs" type="text" name="input_charNome"><br>
+                    <label>Name</label>
                 </div>
-                <div>
-                    <div><input type="text"></div>
-                    <div><label>Level</label></div>
+                <div class="subcontainer subcontainer-1">
+                    <input class="info-inputs" type="number" name="input_charLevel"><br>
+                    <label>Level</label>
                 </div>
-                <div class="clear"></div>
+                <div class="clearfix"></div>
             </div>
-        </div>
-        <div id="divCharInfos2" class="container-0">
-                <div class="subcontainer-0">
-                    <input type="text">
+
+            <div name="div_charInfos2" class="container container-1">
+                <div class="subcontainer subcontainer-2">
+                    <input type="text" name="input_charRace"><br>
                     <label>Race & Class</label>
-                    <input type="text">
-                    <label>Background</label>
-                </div>
-                <div class="subcontainer-0">
-                    <input type="text">
-                    <label>Player Name</label>
-                    <input type="text">
+                    <br><br><br>
+                    <input type="text" name="input_charExp"><br>
                     <label>Experience Points</label>
                 </div>
-                <div class="subcontainer-0">
-                    <input type="text">
+
+                <div class="subcontainer subcontainer-2">
+                    <input type="text" name="input_charBack"><br>
+                    <label>Background</label>
+                    <br><br><br>
+                    <input type="text" name="input_charAlign"><br>
                     <label>Alignment</label>
-                    <input type="text">
+                </div>
+
+                <div class="subcontainer subcontainer-2">
+                    <input type="text" name="input_charPlayer"><br>
+                    <label>Player Name</label>
+                    <br><br><br>
+                    <input type="text" name="input_charGroup"><br>
                     <label>Adventuring Group</label>
                 </div>
-        </div>
+        
+            </div>
         <div class="clear"></div>
-    </div>
+    </div> 
 </body>
 </html>

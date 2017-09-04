@@ -6,6 +6,12 @@ input[type="number"]::-webkit-inner-spin-button {
 input[type="number"] {
     -moz-appearance: textfield;
 }
+input[type="text"]{
+    box-sizing : border-box;
+}
+input[type="number"]{
+    box-sizing : border-box;
+}
 
 @FONT-FACE{
     font-family: wild;
@@ -14,11 +20,12 @@ input[type="number"] {
 
 html,body {
     width: 1280px;
-    margin: 1% auto;
+    margin: auto;
 }
 
 input{
     text-align: center;
+    width: 100%;
 }
 
 @media screen and (max-width: 960px){
@@ -33,8 +40,10 @@ input{
     }
 }
 
-#GOD{
-    background-color: #aee8ab;
+.info-inputs{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
 }
 
 
@@ -43,22 +52,44 @@ input{
     font-family: wild;
 }
 
-.clear{
+.clearfix{
     clear: both;
 }
 
-.container-0{
-    border: 1px solid black;
-    width: 40%;
+.container{
+    border: 1px solid black; 
+    border-radius: 10px;
     padding: 1%;
     overflow: hidden;
-
-    float: left;
-    margin-left:5%;
     text-align: center;
+    margin: 1% 0% 1% 1%
+}
 
+.container-0{
+    width: 40%;
+    float: left;
+}
+
+.container-1{
+    width: 52.5%;
+    float: left;
+}
+
+.subcontainer{
+    float: left;
 }
 
 .subcontainer-0{
-    margin: 0 1% 1% 0;
+    width: 75%;
+    margin: 1%;
+}
+
+.subcontainer-1{
+    width: 20%;
+    margin: 1% 1% 1% 2%;
+}
+
+.subcontainer-2{
+    width: 29.333333%;
+    margin: 5% 2% 5% 2%;
 }

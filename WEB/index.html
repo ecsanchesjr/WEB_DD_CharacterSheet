@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,11 @@
     <link rel="stylesheet" href="CSS/common.css" type="text/css">
     <title>Ficha de Personagem</title>
 </head>
+
 <body>
     <div id="GOD">
-        <div class="table"> <!-- Seçao 1 -->
+        <div class="table">
+            <!-- Seçao 1 -->
             <div name="div_charInfos1" class="container-border  container container-0 row">
                 <h1 class="title">Dungeons & Dragons</h1>
                 <div class="subcontainer subcontainer-0">
@@ -50,97 +53,219 @@
             </div>
         </div>
         <div class="clearfix"></div>
-        
-        <div class="container-border container status-col">
-            <div>
-                <label>Strength</label>
-                <input type="number" class="input-high">
-                <label name="statusCol_Str" class="labels-status-col">----</label>
-            </div>
-            <br>
-            <div>
-                <label>Dexterity</label>
-                <input type="number" class="input-high">
-                <label name="statusCol_Dex" class="labels-status-col">----</label>
-            </div>           
-            <br>
-            <div>
-                <label>Constituition</label>
-                <input type="number" class="input-high">
-                <label name="statusCol_Con" class="labels-status-col">----</label>
-            </div>
-            <br>
-            <div>
-                <label>Intelligence</label>
-                <input type="number" class="input-high">
-                <label name="statusCol_Int" class="labels-status-col">----</label>
-            </div>
-            <br>
-            <div>
-                <label>Wisdom</label>
-                <input type="number" class="input-high">
-                <label name="statusCol_Wis" class="labels-status-col">----</label>
-            </div>
-            <br>
-            <div>
-                <label>Charisma</label>
-                <input type="number" class="input-high">
-                <label name="statusCol_Cha" class="labels-status-col">----</label>
-            </div>
-        </div>
+        <!-- Fim secão 1 -->
 
-        <div class="container attributes-col">
-            <div name="attributeCol_Header">
-                <div class="header-attribute-col">
-                    <input type="number" class="input-attributes-col">
-                    <label class="labels-attributes-col">INSPIRATION</label>
+            <div class="container-border container status-col">
+                <div>
+                    <label>Strength</label>
+                    <input type="number" class="input-high">
+                    <label name="statusCol_Str" class="labels-status-col">----</label>
                 </div>
                 <br>
-                <div class="header-attribute-col">
-                    <input type="number" class="input-attributes-col">
-                    <label class="labels-attributes-col">PROFICIENCY BONUS</label>
+                <div>
+                    <label>Dexterity</label>
+                    <input type="number" class="input-high">
+                    <label name="statusCol_Dex" class="labels-status-col">----</label>
+                </div>
+                <br>
+                <div>
+                    <label>Constituition</label>
+                    <input type="number" class="input-high">
+                    <label name="statusCol_Con" class="labels-status-col">----</label>
+                </div>
+                <br>
+                <div>
+                    <label>Intelligence</label>
+                    <input type="number" class="input-high">
+                    <label name="statusCol_Int" class="labels-status-col">----</label>
+                </div>
+                <br>
+                <div>
+                    <label>Wisdom</label>
+                    <input type="number" class="input-high">
+                    <label name="statusCol_Wis" class="labels-status-col">----</label>
+                </div>
+                <br>
+                <div>
+                    <label>Charisma</label>
+                    <input type="number" class="input-high">
+                    <label name="statusCol_Cha" class="labels-status-col">----</label>
                 </div>
             </div>
 
-            <div class="container-border container att-status-col header-attribute-col">
-                <div class="div-att-status-col">
-                    <input type="checkbox" class="check-att-status-col">
-                    <input type="number" class="input-att-status-col">
-                    <label class="label-att-status-col">Strength</label>
-                    <div class="clearfix"></div>
+            <div class="container attributes-col">
+                <div name="attributeCol_Header">
+                    <div class="header-attribute-col">
+                        <input type="number" class="input-attributes-col">
+                        <label class="labels-attributes-col">INSPIRATION</label>
+                    </div>
+                    <div class="header-attribute-col">
+                        <input type="number" class="input-attributes-col">
+                        <label class="labels-attributes-col">PROFICIENCY BONUS</label>
+                    </div>
                 </div>
-                <div class="div-att-status-col">
-                    <input type="checkbox" class="check-att-status-col">
-                    <input type="number" class="input-att-status-col">
-                    <label class="label-att-status-col">Strength</label>
-                    <div class="clearfix"></div>
+
+                <div name="attributeCol_Stats" class="container-border container header-attribute-col">
+                    <div class="div-att-status-col">
+                        <input type="checkbox" class="check-att-status-col">
+                        <input type="number" class="input-att-status-col">
+                        <label class="label-att-status-col">Strength</label>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="div-att-status-col">
+                        <input type="checkbox" class="check-att-status-col">
+                        <input type="number" class="input-att-status-col">
+                        <label class="label-att-status-col">Dexterity</label>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="div-att-status-col">
+                        <input type="checkbox" class="check-att-status-col">
+                        <input type="number" class="input-att-status-col">
+                        <label class="label-att-status-col">Constituition</label>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="div-att-status-col">
+                        <input type="checkbox" class="check-att-status-col">
+                        <input type="number" class="input-att-status-col">
+                        <label class="label-att-status-col">Intelligence</label>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="div-att-status-col">
+                        <input type="checkbox" class="check-att-status-col">
+                        <input type="number" class="input-att-status-col">
+                        <label class="label-att-status-col">Wisdom</label>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="div-att-status-col">
+                        <input type="checkbox" class="check-att-status-col">
+                        <input type="number" class="input-att-status-col">
+                        <label class="label-att-status-col">Charisma</label>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div style="text-align: center">
+                        <label class="second-title">SAVING THROWS</label>
+                    </div>
                 </div>
-                <div class="div-att-status-col">
-                    <input type="checkbox" class="check-att-status-col">
-                    <input type="number" class="input-att-status-col">
-                    <label class="label-att-status-col">Strength</label>
-                    <div class="clearfix"></div>
+
+                <div name="attributeCol_Skills" class="container-border container header-attribute-col div-att-skills-col">
+                    <div class="div-att-status-col">
+                        <input type="checkbox" class="check-att-status-col">
+                        <input type="number" class="input-att-status-col">
+                        <label class="label-att-status-col">Acrobatics (Dex)</label>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="div-att-status-col">
+                        <input type="checkbox" class="check-att-status-col">
+                        <input type="number" class="input-att-status-col">
+                        <label class="label-att-status-col">Animal Handling (Wis)</label>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="div-att-status-col">
+                        <input type="checkbox" class="check-att-status-col">
+                        <input type="number" class="input-att-status-col">
+                        <label class="label-att-status-col">Arcana (Int)</label>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="div-att-status-col">
+                        <input type="checkbox" class="check-att-status-col">
+                        <input type="number" class="input-att-status-col">
+                        <label class="label-att-status-col">Athletics (Str)</label>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="div-att-status-col">
+                        <input type="checkbox" class="check-att-status-col">
+                        <input type="number" class="input-att-status-col">
+                        <label class="label-att-status-col">Deception (Cha)</label>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="div-att-status-col">
+                        <input type="checkbox" class="check-att-status-col">
+                        <input type="number" class="input-att-status-col">
+                        <label class="label-att-status-col">History (Int)</label>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="check-att-status-col">
+                        <input type="number" class="input-att-status-col">
+                        <label class="label-att-status-col">Insight (Wis)</label>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="div-att-status-col">
+                        <input type="checkbox" class="check-att-status-col">
+                        <input type="number" class="input-att-status-col">
+                        <label class="label-att-status-col">Intimidation (Cha)</label>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="div-att-status-col">
+                        <input type="checkbox" class="check-att-status-col">
+                        <input type="number" class="input-att-status-col">
+                        <label class="label-att-status-col">Investigation (Int)</label>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="div-att-status-col">
+                        <input type="checkbox" class="check-att-status-col">
+                        <input type="number" class="input-att-status-col">
+                        <label class="label-att-status-col">Medicine (Wis)</label>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="div-att-status-col">
+                        <input type="checkbox" class="check-att-status-col">
+                        <input type="number" class="input-att-status-col">
+                        <label class="label-att-status-col">Nature (Int)</label>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="div-att-status-col">
+                        <input type="checkbox" class="check-att-status-col">
+                        <input type="number" class="input-att-status-col">
+                        <label class="label-att-status-col">Perception (Wis)</label>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="div-att-status-col">
+                        <input type="checkbox" class="check-att-status-col">
+                        <input type="number" class="input-att-status-col">
+                        <label class="label-att-status-col">Performance (Cha)</label>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="div-att-status-col">
+                        <input type="checkbox" class="check-att-status-col">
+                        <input type="number" class="input-att-status-col">
+                        <label class="label-att-status-col">Persuasion (Cha)</label>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="div-att-status-col">
+                        <input type="checkbox" class="check-att-status-col">
+                        <input type="number" class="input-att-status-col">
+                        <label class="label-att-status-col">Religion (Int)</label>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="div-att-status-col">
+                        <input type="checkbox" class="check-att-status-col">
+                        <input type="number" class="input-att-status-col">
+                        <label class="label-att-status-col">Sleight of Hand (Dex)</label>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="div-att-status-col">
+                        <input type="checkbox" class="check-att-status-col">
+                        <input type="number" class="input-att-status-col">
+                        <label class="label-att-status-col">Stealth (Dex)</label>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="div-att-status-col">
+                        <input type="checkbox" class="check-att-status-col">
+                        <input type="number" class="input-att-status-col">
+                        <label class="label-att-status-col">Survival (Wis)</label>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div style="text-align: center">
+                        <label class="second-title">SKILLS</label>
+                    </div>
                 </div>
-                <div class="div-att-status-col">
-                    <input type="checkbox" class="check-att-status-col">
-                    <input type="number" class="input-att-status-col">
-                    <label class="label-att-status-col">Strength</label>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="div-att-status-col">
-                    <input type="checkbox" class="check-att-status-col">
-                    <input type="number" class="input-att-status-col">
-                    <label class="label-att-status-col">Strength</label>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="div-att-status-col">
-                    <input type="checkbox" class="check-att-status-col">
-                    <input type="number" class="input-att-status-col">
-                    <label class="label-att-status-col">Strength</label>
-                    <div class="clearfix"></div>
-                </div>
+
             </div>
-        </div>
-    </div> 
+            <!-- Fechamento coluna atributos -->
+
+    </div>
+    <!-- GOOOOOOD DIV -->
 </body>
+
 </html>

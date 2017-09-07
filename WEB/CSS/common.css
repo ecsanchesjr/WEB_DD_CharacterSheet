@@ -46,6 +46,12 @@ input{
     margin-top: 1%;
 }
 
+.table2{
+    display: flex;
+    margin-top: 1%;
+    width: 50%;
+}
+
 .row{
     align-items: scretch;
     flex: 1;
@@ -63,6 +69,11 @@ input{
     font-family: wild;
 }
 
+.second-title{
+    font-size: 20px;
+    font-weight: bold;
+}
+
 .clearfix{
     clear: both;
 }
@@ -74,7 +85,7 @@ input{
 
 .container{
     padding: 1%;
-    overflow: hidden;
+    /*overflow: hidden;*/
     text-align: center;
     margin: 1% 0% 1% 1%;
 }
@@ -129,7 +140,7 @@ input{
 .attributes-col{
     width: 30%;
     float: left;
-    padding: 2%;
+    padding: 0%;
 }
 
 .input-attributes-col{
@@ -145,13 +156,13 @@ input{
 }
 
 .header-attribute-col{
-    width: 80%;
+    width: 100%;
     margin: auto;
     text-align: left;
 }
 
 .att-status-col{
-    margin-top: 10%;
+    margin-top: 2%;
 }
 
 .input-att-status-col{
@@ -166,11 +177,16 @@ input{
 }
 
 .label-att-status-col{
+    font-size: 20px;
     width: 60%;
     float: left;
-    margin: 2% 0 0 5%;
+    margin: 1% 0 1% 5%;
 }
 
 .div-att-status-col{
-    margin: 3% 0%;
+    margin: 0% 0%;
+}
+
+.div-att-skills-col{
+    margin: 2% 0%;
 }

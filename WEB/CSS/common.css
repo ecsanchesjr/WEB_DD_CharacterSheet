@@ -125,6 +125,11 @@ input{
     padding: 2%;
 }
 
+.label-status{
+    font-size: 22px;
+    margin-top: 2%;
+}
+
 .input-high{
     font-size: 300%;
     border: 5px solid black;
@@ -189,4 +194,23 @@ input{
 
 .div-att-skills-col{
     margin: 2% 0%;
+}
+
+
+/* Secao 3 */
+
+.container-hp{
+    float: left;
+    width: 49%;
+    margin-left: 2.5%;
+}
+
+.div-hp{
+    width: 30%;
+    float: left;
+    margin: 1% 1% 0% 2%;
+}
+
+.div-hit{
+    margin-top: 2%;
 }

@@ -365,7 +365,7 @@ p{
     }
     .container-0, .container-1{
         float: none;
-        width: 95%;
+        width: 96%;
     }
     .table{
         display: block;
@@ -408,3 +408,57 @@ p{
         float: none;
     }
 }
+
+@media screen and (max-width: 960px){
+    html,body {
+        max-width: 960px;
+        min-width: 641px;
+    }
+    .toggle-clear{
+        clear: both;
+    }
+    .container-0, .container-1{
+        float: none;
+        width: 96%;
+    }
+    .table{
+        display: block;
+        flex: 0;
+    }
+    .container-hp, .container-initiate{
+        float: left;
+    }
+    .status-col{
+        width: 30%;
+    }
+    .attributes-col{
+        width: 61%;
+    }
+    .input-high{
+        font-size: 322%;
+    }
+    .labels-attributes-col{
+        font-size: 23px;
+    }
+    .container-hp, .container-initiate{
+        width: 30%;
+        margin: 1%;
+    }
+    .labels-death-dice{
+        font-size: 11px;
+        margin-top: 2%
+    }
+    .div-death-dice-2{
+        width: 46%;
+        margin-left: 2%;
+    }
+    
+    .container-table{
+        float: none;
+        width: 96%;
+        margin: 1%;
+    }
+    .bottom-col-1, .bottom-col-2{
+        width: 96%;
+        float: none;
+    }

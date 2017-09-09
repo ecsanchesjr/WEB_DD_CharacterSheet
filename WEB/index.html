@@ -54,8 +54,7 @@
         </div>
         <div class="clearfix"></div>
         <!-- Fim secão 1 -->
-
-        <div class="container-border container status-col">
+        <div name="medium-section" <div class="container-border container status-col row">
             <div>
                 <label class="label-status">Strength</label>
                 <input type="number" class="input-high">
@@ -93,7 +92,7 @@
             </div>
         </div>
 
-        <div class="container attributes-col">
+        <div class="container attributes-col row">
             <div name="attributeCol_Header">
                 <div class="header-attribute-col">
                     <input type="number" class="input-attributes-col">
@@ -269,30 +268,457 @@
         <!-- Fechamento coluna atributos -->
 
         <!-- Coluna secundária, seção 3 -->
-        <div>
-            <div class="container container-border container-hp">
-                <!-- Div relacionada a HP -->
-                <div>
-                    <div class="div-hp">
-                        <input type="number" class="input-high">
-                        <label>ARMOR CLASS</label>
+        <div class="row">
+            <div>
+                <div class="container container-border container-hp">
+                    <!-- Div relacionada a HP -->
+                    <div>
+                        <div class="div-hp">
+                            <input type="number" class="input-high">
+                            <label>ARMOR CLASS</label>
+                        </div>
+                        <div class="div-hp">
+                            <input type="number" class="input-high">
+                            <label>MAX HP</label>
+                        </div>
+                        <div class="div-hp">
+                            <input type="number" class="input-high">
+                            <label>TEMP HP</label>
+                        </div>
+                        <div class="clearfix"></div>
                     </div>
-                    <div class="div-hp">
+                    <div class="div-hit">
                         <input type="number" class="input-high">
-                        <label>MAX HP</label>
+                        <label>CURRENT HIT POINTS</label>
                     </div>
-                    <div class="div-hp">
-                        <input type="number" class="input-high">
-                        <label>TEMP HP</label>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="div-hit">
-                    <input type="number" class="input-high">
-                    <label>CURRENT HIT POINTS</label>
                 </div>
             </div>
+
+            <!-- table- attacks & spellcasting -->
+            <div class="container-table container container-border">
+                <table class="table1">
+                    <tr>
+                        <td>NAME</td>
+                        <td>ATTACK</td>
+                        <td>DAMAGE</td>
+                        <td>RANGE</td>
+                        <td>AMMO</td>
+                        <td>USED</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                        <tr>
+                            <td>
+                                <div>
+                                    <input type="text">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>
+                                    <input type="text">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                        </tr>
+                    </tr>
+                </table>
+                <label class="second-title">FEATURES & TRAITS</label>
+            </div>
+
+            <!-- table- attacks & spellcasting -->
+            <div class="container-table container container-border">
+                <table rules="all">
+                    <tr>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text">
+                                <label name="statusCol_Str"></label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <label class="second-title">FEATURES & TRAITS</label>
+            </div>
         </div>
+
+    </div>
+    <!-- Medium Section -->
+    <div class="clearfix"></div>
+    <!-- Bottom Section -->
+    <div name="bot_Section" class="table bottom-section">
+        <div class="container-bottom bottom-col-1 container container-border">
+            <input type="text" class="input-bottom" style="margin-top: 2%"> 
+            <input type="text" class="input-bottom">
+            <input type="text" class="input-bottom">
+            <input type="text" class="input-bottom">
+            <input type="text" class="input-bottom">
+            <input type="text" class="input-bottom">
+            <input type="text" class="input-bottom">
+            <input type="text" class="input-bottom">
+            <input type="text" class="input-bottom">
+            <br>
+            <label class="second-title">OTHER PROFICIENCIES & LANGUAGES</label>
+        </div>
+        <div class="container-bottom bottom-col-2 container container-border">
+            <div class="bottom-col-sec">
+                <input type="text" class="input-bottom">
+                <input type="text" class="input-bottom">
+                <input type="text" class="input-bottom">
+                <input type="text" class="input-bottom">
+                <input type="text" class="input-bottom">
+                <input type="text" class="input-bottom">
+                <input type="text" class="input-bottom">
+                <input type="text" class="input-bottom">
+            </div>
+            <div class="bottom-col-sec">
+                <input type="text" class="input-bottom">
+                <input type="text" class="input-bottom">
+                <input type="text" class="input-bottom">
+                <input type="text" class="input-bottom">
+                <input type="text" class="input-bottom">
+                <input type="text" class="input-bottom">
+                <input type="text" class="input-bottom">
+                <input type="text" class="input-bottom">
+            </div>
+            <div name="secondary" class="div-col-2">
+                <div class="div-secondary-col-2">
+                    <label class="label-secondary-col-2">C  </label>
+                    <input class="input-secondary-col-2" type="text">
+                </div>
+                <div class="div-secondary-col-2">
+                    <label class="label-secondary-col-2">S  </label>
+                    <input class="input-secondary-col-2" type="text">
+                </div>
+                <div class="div-secondary-col-2">
+                    <label class="label-secondary-col-2">E  </label>
+                    <input class="input-secondary-col-2" type="text">
+                </div>
+                <div class="div-secondary-col-2">
+                    <label class="label-secondary-col-2">G  </label>
+                    <input class="input-secondary-col-2" type="text">
+                </div>
+                <div class="div-secondary-col-2">
+                    <label class="label-secondary-col-2">P  </label>
+                    <input class="input-secondary-col-2" type="text">
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <br>
+            <label class="second-title">INVENTORY & EQUIPMENT</label>
+        </div>
+    </div>
 
     </div>
     <!-- GOOOOOOD DIV -->

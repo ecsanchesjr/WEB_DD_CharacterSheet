@@ -20,25 +20,13 @@ input[type="number"]{
 
 html,body {
     max-width: 1280px;
-    min-width: 640px;
+    min-width: 961px;
     margin: auto;
 }
 
 input{
     text-align: center;
     width: 100%;
-}
-
-@media screen and (max-width: 960px){
-    .medium-width{
-        width: 100%;
-    }
-    html,body {
-        width: 960px;
-    }
-    .border-all{
-        float: none;
-    }
 }
 
 .table{
@@ -132,7 +120,7 @@ input{
 }
 
 .labels-status-col{
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 20px;
     font-size: 30px;
 }
@@ -153,6 +141,7 @@ input{
 
 .labels-attributes-col{
     width: 60%;
+    font-size: 22px;
 }
 
 .header-attribute-col{
@@ -196,8 +185,8 @@ input{
 
 .container-hp{
     float: left;
-    width: 49%;
-    margin-left: 2.5%;
+    width: 25%;
+    margin-left: 4.5%;
 }
 
 .div-hp{
@@ -210,12 +199,81 @@ input{
     margin-top: 2%;
 }
 
+.container-initiate{
+    float: left;
+    width: 21%;
+}
+
+.container-initiate-col-1{
+    width: 65%;
+    margin: 1%;
+    float: left;
+}
+
+.container-initiate-col-2{
+    width: 31%;
+    margin: 1%;
+    float: left;
+}
+
+
+.inputs-hit-dice{
+    width: 35%;
+    float: left;
+}
+
+.labels-hit-dice{
+    width: 15%;
+    float:left;
+    margin: 4% 2%;
+}
+
+.input-second-dices{
+    margin: 1% 0;
+}
+
+.div-hit-dice{
+    margin: 1% 0%;
+}
+
+.inputs-death-dice{
+    width: 1%;
+    float: left;
+}
+
+.labels-death-dice{
+    font-size: 12px;
+    float: left;
+    margin-top: 4%;
+}
+
+.div-death-dice-1{
+    width: 52%;
+    float: left;
+}
+
+.div-death-dice-2{
+    width: 45%;
+    float: left;
+    margin-left: 3%;
+}
+
+.third-title{
+    font-size: 20;
+    font-weight: bold;
+}
+
+.table2{
+    display: flex;
+    flex: 1;
+}
+
+
 .container-table{
     float: left;
     width: 49%;
     margin-left: 2.5%;
 }
-
 
 
 /* Secao 4- Tables */
@@ -291,4 +349,62 @@ p{
     float: left;
     margin: 1% 3%;
     width: 70%;
+}
+
+.toggle-clear{
+    clear: none;
+}
+
+@media screen and (max-width: 960px){
+    html,body {
+        max-width: 960px;
+        min-width: 641px;
+    }
+    .toggle-clear{
+        clear: both;
+    }
+    .container-0, .container-1{
+        float: none;
+        width: 95%;
+    }
+    .table{
+        display: block;
+        flex: 0;
+    }
+    .container-hp, .container-initiate{
+        float: left;
+    }
+    .status-col{
+        width: 30%;
+    }
+    .attributes-col{
+        width: 61%;
+    }
+    .input-high{
+        font-size: 400%;
+    }
+    .labels-attributes-col{
+        font-size: 30px;
+    }
+    .container-hp, .container-initiate{
+        width: 30%;
+        margin: 1%;
+    }
+    .labels-death-dice{
+        font-size: 15px;
+        margin-top: 2%
+    }
+    .div-death-dice-2{
+        width: 36%;
+        margin-left: 12%;
+    }
+    .container-table{
+        float: none;
+        width: 96%;
+        margin: 1%;
+    }
+    .bottom-col-1, .bottom-col-2{
+        width: 96%;
+        float: none;
+    }
 }

@@ -11,7 +11,9 @@ Linguagens utilizadas para a primeira fase:
 * HTML
 * CSS
 
+O projeto possui capacidade de responsividade em três telas de tamanhos diferentes, sendo eles:
+* 1280 pixels
+* 960 pixels
+* 640 pixels
+
 # EM ANDAMENTO
-
-
-Acho válido usarmos os 3 tamanhos: 1280 -> 960 -> 640

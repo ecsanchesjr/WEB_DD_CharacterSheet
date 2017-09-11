@@ -17,11 +17,11 @@
                 <h1 class="title">Dungeons & Dragons</h1>
                 <div class="subcontainer subcontainer-0">
                     <input class="info-inputs" type="text" name="input_charNome"><br>
-                    <label>Name</label>
+                    <label class="labels-char-infos">Name</label>
                 </div>
                 <div class="subcontainer subcontainer-1">
                     <input class="info-inputs" type="number" name="input_charLevel"><br>
-                    <label>Level</label>
+                    <label class="labels-char-infos">Level</label>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -29,26 +29,26 @@
             <div name="div_charInfos2" class="container-border container container-1 row">
                 <div class="subcontainer subcontainer-2">
                     <input type="text" name="input_charRace"><br>
-                    <label>Race & Class</label>
+                    <label class="labels-char-infos-1">Race & Class</label>
                     <br><br><br>
                     <input type="text" name="input_charExp"><br>
-                    <label>Experience Points</label>
+                    <label class="labels-char-infos-1">Experience Points</label>
                 </div>
 
                 <div class="subcontainer subcontainer-2">
                     <input type="text" name="input_charBack"><br>
-                    <label>Background</label>
+                    <label class="labels-char-infos-1">Background</label>
                     <br><br><br>
                     <input type="text" name="input_charAlign"><br>
-                    <label>Alignment</label>
+                    <label class="labels-char-infos-1">Alignment</label>
                 </div>
 
                 <div class="subcontainer subcontainer-2">
                     <input type="text" name="input_charPlayer"><br>
-                    <label>Player Name</label>
+                    <label class="labels-char-infos-1">Player Name</label>
                     <br><br><br>
                     <input type="text" name="input_charGroup"><br>
-                    <label>Adventuring Group</label>
+                    <label class="labels-char-infos-1">Adventuring Group</label>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -115,7 +115,7 @@
                     </div>
                 </div>
 
-                <div name="attributeCol_Stats" class="container-border container header-attribute-col">
+                <div name="attributeCol_Stats" class="container-border container header-attribute-col-1">
                     <div class="div-att-status-col">
                         <input type="checkbox" class="check-att-status-col">
                         <input type="number" class="input-att-status-col">
@@ -372,7 +372,7 @@
                             <td>AMMO</td>
                             <td>USED</td>
                         </tr>
-                        <tr>
+                        <tr class="tr-bLine">
                             <td>
                                 <div>
                                     <input type="text">
@@ -410,7 +410,7 @@
                                 </div>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="tr-bLine">
                             <td>
                                 <div>
                                     <input type="text">
@@ -448,7 +448,7 @@
                                 </div>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="tr-bLine">
                             <td>
                                 <div>
                                     <input type="text">
@@ -486,7 +486,7 @@
                                 </div>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="tr-bLine">
                             <td>
                                 <div>
                                     <input type="text">
@@ -524,7 +524,7 @@
                                 </div>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="tr-bLine">
                             <td>
                                 <div>
                                     <input type="text">
@@ -561,90 +561,91 @@
                                     <label name="statusCol_Str"></label>
                                 </div>
                             </td>
-                            <tr>
-                                <td>
-                                    <div>
-                                        <input type="text">
-                                        <label name="statusCol_Str"></label>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div>
-                                        <input type="text">
-                                        <label name="statusCol_Str"></label>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div>
-                                        <input type="text">
-                                        <label name="statusCol_Str"></label>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div>
-                                        <input type="text">
-                                        <label name="statusCol_Str"></label>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div>
-                                        <input type="text">
-                                        <label name="statusCol_Str"></label>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div>
-                                        <input type="text">
-                                        <label name="statusCol_Str"></label>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div>
-                                        <input type="text">
-                                        <label name="statusCol_Str"></label>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div>
-                                        <input type="text">
-                                        <label name="statusCol_Str"></label>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div>
-                                        <input type="text">
-                                        <label name="statusCol_Str"></label>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div>
-                                        <input type="text">
-                                        <label name="statusCol_Str"></label>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div>
-                                        <input type="text">
-                                        <label name="statusCol_Str"></label>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div>
-                                        <input type="text">
-                                        <label name="statusCol_Str"></label>
-                                    </div>
-                                </td>
-                            </tr>
+                        </tr>
+                        <tr class="tr-bLine">
+                            <td>
+                                <div>
+                                    <input type="text">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="tr-bLine">
+                            <td>
+                                <div>
+                                    <input type="text">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
                         </tr>
                     </table>
+                    <br>
                     <label class="second-title">ATTACKS & SPELLCASTING</label>
                 </div>
 
                 <!-- table- attacks & spellcasting -->
                 <div class="container-table container container-border">
-                    <table rules="all">
+                    <table>
                         <tr>
                             <td>
                                 <div>

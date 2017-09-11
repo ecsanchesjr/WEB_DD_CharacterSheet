@@ -13,24 +13,43 @@ input[type="number"]{
     box-sizing : border-box;
 }
 
+
 @FONT-FACE{
     font-family: wild;
     src:url("../fonts/fontTheWild.otf");
 }
 
+
 html,body {
     max-width: 1280px;
     min-width: 961px;
     margin: auto;
+    
+    text-shadow: 1px 1px 1px black;
 }
+
 
 input{
     text-align: center;
+    color: black;
     width: 100%;
+    outline: 0;
+    border-width: 0 0 0 0;
+    border-bottom: 2px solid grey;
+    font-size: 110%;
+    text-shadow: 0px 1px 1px black;
+}
+
+input:focus{
+    border-color: #C48F00;
 }
 
 .table{
-    display: flex;
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
     margin-top: 1%;
 }
 
@@ -48,9 +67,18 @@ input{
 
 
 .title{
-    font-size: 60px;
+    font-size: 70px;
     font-family: wild;
 }
+
+.labels-char-infos{
+    font-size: 22px;
+}
+
+.labels-char-infos-1{
+    font-size: 20px;
+}
+
 
 .second-title{
     font-size: 20px;
@@ -68,7 +96,6 @@ input{
 
 .container{
     padding: 1%;
-    /*overflow: hidden;*/
     text-align: center;
     margin: 1% 0% 1% 1%;
 }
@@ -76,11 +103,13 @@ input{
 .container-0{
     width: 40%;
     float: left;
+
 }
 
 .container-1{
     width: 52.5%;
     float: left;
+
 }
 
 .subcontainer{
@@ -150,6 +179,13 @@ input{
     text-align: left;
 }
 
+.header-attribute-col-1{
+    width: 100%;
+    margin: auto;
+    text-align: left;
+}
+
+
 .att-status-col{
     margin-top: 2%;
 }
@@ -178,6 +214,8 @@ input{
 
 .div-att-skills-col{
     margin: 2% 0%;
+
+    background-color: white;
 }
 
 
@@ -237,7 +275,7 @@ input{
 }
 
 .inputs-death-dice{
-    width: 1%;
+    width: 10%;
     float: left;
 }
 
@@ -264,8 +302,13 @@ input{
 }
 
 .table2{
-    display: flex;
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
     flex: 1;
+    margin-top: 1%;
 }
 
 
@@ -288,19 +331,19 @@ td{
     padding: 8px;
 }
 
-tr{
-    border-bottom: 1px solid gray;
+.tr-bLine{
+    border-bottom: 1px solid black;
 }
 
 p{
     margin-bottom: 0;
 }
 
-/* para nao por linha na primeira linha */
+/* 
 .table1 tr:not(:last-child) { border-bottom: 1px solid white; }
-/* para nao por linha na ultima linha */
-.table1 tr:not(:first-child) { border-bottom: 1px solid gray; }
 
+.table1 tr:not(:first-child) { border-bottom: 1px solid gray; }
+ */
 .bottom-col-1{
     width: 40%;
     float: left;
@@ -409,10 +452,10 @@ p{
     }
 }
 
-@media screen and (max-width: 960px){
+@media screen and (max-width: 640px){
     html,body {
-        max-width: 960px;
-        min-width: 641px;
+        max-width: 640px;
+        min-width: 320px;
     }
     .toggle-clear{
         clear: both;
@@ -462,3 +505,4 @@ p{
         width: 96%;
         float: none;
     }
+}

@@ -13,7 +13,6 @@ input[type="number"]{
     box-sizing : border-box;
 }
 
-
 @FONT-FACE{
     font-family: wild;
     src:url("../fonts/fontTheWild.otf");
@@ -26,8 +25,15 @@ html,body {
     margin: auto;
     
     text-shadow: 1px 1px 1px black;
+
+    /* background-color: #DED896; */
+    background-image: url("../images/background.png");
 }
 
+img{
+    -webkit-filter: drop-shadow(3px 3px 10px black);
+    filter: drop-shadow(3px 3px 10px black);
+}
 
 input{
     text-align: center;
@@ -35,9 +41,10 @@ input{
     width: 100%;
     outline: 0;
     border-width: 0 0 0 0;
-    border-bottom: 2px solid grey;
+    border-bottom: 3px solid black;
     font-size: 110%;
     text-shadow: 0px 1px 1px black;
+    background-color: transparent;
 }
 
 input:focus{
@@ -65,6 +72,13 @@ input:focus{
     margin: 0 auto;
 }
 
+.div-char-infos-section1{
+    margin-top: 20%;
+}
+
+.div-char-infos-section1-bot{
+    margin-top: 30%;
+}
 
 .title{
     font-size: 70px;
@@ -214,8 +228,6 @@ input:focus{
 
 .div-att-skills-col{
     margin: 2% 0%;
-
-    background-color: white;
 }
 
 

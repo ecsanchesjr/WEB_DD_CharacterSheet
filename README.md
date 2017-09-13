@@ -2,11 +2,16 @@
 
 Projeto idealizado para a disciplina de "Programação WEB", 8º Período de Engenharia de Computação da UTFPR-CP.
 
+# Objetivo
+
+O projeto irá desenvolver uma ficha de personagem de RPG, baseando-se no modelo empregado em D&D 5.0.
+
 # Fases do Projeto
 
 ## Fase 1
 
-Desenvolvimento de uma página para conter a ficha de personagem do jogador.
+Desenvolvimento de uma página para conter a ficha de personagem do jogador. Contendo apenas a parte visual de como será a ficha de personagem. 
+
 Linguagens utilizadas para a primeira fase:
 * HTML
 * CSS

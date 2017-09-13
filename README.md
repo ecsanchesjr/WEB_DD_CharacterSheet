@@ -2,6 +2,10 @@
 
 Projeto idealizado para a disciplina de "Programação WEB", 8º Período de Engenharia de Computação da UTFPR-CP.
 
+Alunos envolvidos no projeto:
+* Bruno Martins
+* Elcio Cezario
+
 # Objetivo
 
 O projeto irá desenvolver uma ficha de personagem de RPG, baseando-se no modelo empregado em D&D 5.0.

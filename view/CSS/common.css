@@ -18,6 +18,19 @@ input[type="number"]{
     src:url("../fonts/fontTheWild.otf");
 }
 
+button{
+    background-color: #EBA942;
+    font-size: 1.5em;
+    color: #000000;
+    border-radius: 6px;
+    border: 0 solid black;
+    border-width: 0px 2px 2px 0px;
+    box-shadow: 1px 1px 3px black;
+}
+
+button:hover{
+    box-shadow: 2px 2px 5px #000000;
+}
 
 html,body {
     max-width: 1280px;

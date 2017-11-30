@@ -1,0 +1,35 @@
+
+.title-page-label{
+    font-size: 5em;
+    font-family: wild;
+    color: #884200;
+    text-shadow: 3px 3px 3px #000000;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 40% 20% 12.5% 12.5%;
+    grid-column-gap: 5%;
+    grid-row-gap: 5%;
+    margin: 1%;
+}
+
+.grid label{
+    font-size: 1.2em;
+    word-wrap: break-all;
+    border-bottom: 2px solid black;
+}
+
+.grid button{
+    font-size: 1em;
+}
+
+.container{
+    text-align: center;
+    width: 70%;
+    border: 3px solid black;
+    border-radius: 10px;
+    border-color: black;
+    margin: 10% auto;
+    padding: 0;
+}

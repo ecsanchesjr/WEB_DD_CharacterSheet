@@ -1,0 +1,49 @@
+input[type="password"]{
+    box-sizing : border-box;
+}
+
+.title-page-label{
+    font-size: 4em;
+    font-family: wild;
+    color: #884200;
+    text-shadow: 3px 3px 3px #000000;
+}
+
+.container{
+    text-align: center;
+    width: 50%;
+    border: 3px solid black;
+    border-radius: 10px;
+    border-color: black;
+    margin: 10% auto;
+    padding: 0;
+}
+
+input{
+    text-align: center;
+    color: black;
+    width: 90%;
+    border-width: 3;
+    margin: 3%;
+    font-size: 130%;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: black;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: black;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: black;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    color: black;
+  }
+ 
+button{
+    display: inline;
+    margin: 0% 5% 3% 5%;
+    width: 30%;
+    color: black;
+}

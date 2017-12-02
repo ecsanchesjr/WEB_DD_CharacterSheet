@@ -6,10 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="CSS/common.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../js/charPost.js"></script>
     <title>Ficha de Personagem</title>
 </head>
 
 <body>
+
+        <button onclick="submit()">Teste</button>
     <div id="GOD">
         <div class="table">
             <!-- Seçao 1 -->
@@ -36,7 +40,7 @@
                         <label class="labels-char-infos-1">Race & Class</label>
                     </div>
                     <div class="div-char-infos-section1-bot">
-                        <input type="text" name="input_charExp"><br>
+                        <input type="number" name="input_charExp"><br>
                         <label class="labels-char-infos-1">Experience Points</label>
                     </div>
                 </div>
@@ -72,40 +76,40 @@
 
         <div name="medium-section">
             <!-- Coluna onde estão os quadrados grandes para status -->
-            <div class="container-border container status-col row">
+            <div id="attribCol" class="container-border container status-col row">
                 <div>
                     <label class="label-status">Strength</label>
-                    <input type="number" class="input-high">
+                    <input type="number" class="input-high" name="input_atribStr">
                     <label name="statusCol_Str" class="labels-status-col">----</label>
                 </div>
                 <br>
                 <div>
                     <label class="label-status">Dexterity</label>
-                    <input type="number" class="input-high">
+                    <input type="number" class="input-high" name="input_atribDex">
                     <label name="statusCol_Dex" class="labels-status-col">----</label>
                 </div>
                 <br>
                 <div>
                     <label class="label-status">Constituition</label>
-                    <input type="number" class="input-high">
+                    <input type="number" class="input-high" name="input_atribCon">
                     <label name="statusCol_Con" class="labels-status-col">----</label>
                 </div>
                 <br>
                 <div>
                     <label class="label-status">Intelligence</label>
-                    <input type="number" class="input-high">
+                    <input type="number" class="input-high" name="input_atribInt">
                     <label name="statusCol_Int" class="labels-status-col">----</label>
                 </div>
                 <br>
                 <div>
                     <label class="label-status">Wisdom</label>
-                    <input type="number" class="input-high">
+                    <input type="number" class="input-high" name="input_atribWis">
                     <label name="statusCol_Wis" class="labels-status-col">----</label>
                 </div>
                 <br>
                 <div>
                     <label class="label-status">Charisma</label>
-                    <input type="number" class="input-high">
+                    <input type="number" class="input-high" name="input_atribCha">
                     <label name="statusCol_Cha" class="labels-status-col">----</label>
                 </div>
             </div>
@@ -114,53 +118,53 @@
             <div class="container attributes-col">
                 <div name="attributeCol_Header">
                     <div class="header-attribute-col">
-                        <input type="number" class="input-attributes-col">
+                        <input type="number" class="input-attributes-col" name="input_insp">
                         <label class="labels-attributes-col">INSPIRATION</label>
                     </div>
                     <div class="header-attribute-col">
-                        <input type="number" class="input-attributes-col">
+                        <input type="number" class="input-attributes-col" name="input_profBonus">
                         <label class="labels-attributes-col">PROFICIENCY BONUS</label>
                     </div>
                     <div class="header-attribute-col">
-                        <input type="number" class="input-attributes-col">
+                        <input type="number" class="input-attributes-col" name="input_passivePerc">
                         <label class="labels-attributes-col">PASSIVE PERCEPTION</label>
                     </div>
                 </div>
 
                 <div name="attributeCol_Stats" class="container-border container header-attribute-col-1">
                     <div class="div-att-status-col">
-                        <input type="checkbox" class="check-att-status-col">
-                        <input type="number" class="input-att-status-col">
+                        <input type="checkbox" class="check-att-status-col" name="check_savStr">
+                        <input type="number" class="input-att-status-col" name="input_savStr">
                         <label class="label-att-status-col">Strength</label>
                         <div class="clearfix"></div>
                     </div>
                     <div class="div-att-status-col">
-                        <input type="checkbox" class="check-att-status-col">
-                        <input type="number" class="input-att-status-col">
+                        <input type="checkbox" class="check-att-status-col" name="check_savDex">
+                        <input type="number" class="input-att-status-col" name="input_savDex">
                         <label class="label-att-status-col">Dexterity</label>
                         <div class="clearfix"></div>
                     </div>
                     <div class="div-att-status-col">
-                        <input type="checkbox" class="check-att-status-col">
-                        <input type="number" class="input-att-status-col">
+                        <input type="checkbox" class="check-att-status-col" name="check_savCon">
+                        <input type="number" class="input-att-status-col" name="input_savCon">
                         <label class="label-att-status-col">Constituition</label>
                         <div class="clearfix"></div>
                     </div>
                     <div class="div-att-status-col">
-                        <input type="checkbox" class="check-att-status-col">
-                        <input type="number" class="input-att-status-col">
+                        <input type="checkbox" class="check-att-status-col" name="check_savInt">
+                        <input type="number" class="input-att-status-col" name="input_savInt">
                         <label class="label-att-status-col">Intelligence</label>
                         <div class="clearfix"></div>
                     </div>
                     <div class="div-att-status-col">
-                        <input type="checkbox" class="check-att-status-col">
-                        <input type="number" class="input-att-status-col">
+                        <input type="checkbox" class="check-att-status-col" name="check_savWis">
+                        <input type="number" class="input-att-status-col" name="input_savWis">
                         <label class="label-att-status-col">Wisdom</label>
                         <div class="clearfix"></div>
                     </div>
                     <div class="div-att-status-col">
-                        <input type="checkbox" class="check-att-status-col">
-                        <input type="number" class="input-att-status-col">
+                        <input type="checkbox" class="check-att-status-col" name="check_savCha">
+                        <input type="number" class="input-att-status-col" name="input_savCha">
                         <label class="label-att-status-col">Charisma</label>
                         <div class="clearfix"></div>
                     </div>
@@ -169,112 +173,112 @@
                     </div>
                 </div>
 
-                <div name="attributeCol_Skills" class="container-border container header-attribute-col div-att-skills-col">
+                <div id="attributeCol_Skills" class="container-border container header-attribute-col div-att-skills-col">
                     <div class="div-att-status-col">
-                        <input type="checkbox" class="check-att-status-col">
-                        <input type="number" class="input-att-status-col">
+                        <input type="checkbox" class="check-att-status-col" name="check_skillAcrobatics">
+                        <input type="number" class="input-att-status-col" name="input_skillAcrobatics">
                         <label class="label-att-status-col">Acrobatics (Dex)</label>
                         <div class="clearfix"></div>
                     </div>
                     <div class="div-att-status-col">
-                        <input type="checkbox" class="check-att-status-col">
-                        <input type="number" class="input-att-status-col">
+                        <input type="checkbox" class="check-att-status-col" name="check_skillAnimalHandling">
+                        <input type="number" class="input-att-status-col" name="input_skillAnimalHandling">
                         <label class="label-att-status-col">Animal Handling (Wis)</label>
                         <div class="clearfix"></div>
                     </div>
                     <div class="div-att-status-col">
-                        <input type="checkbox" class="check-att-status-col">
-                        <input type="number" class="input-att-status-col">
+                        <input type="checkbox" class="check-att-status-col" name="check_skillArcana">
+                        <input type="number" class="input-att-status-col" name="input_skillArcana">
                         <label class="label-att-status-col">Arcana (Int)</label>
                         <div class="clearfix"></div>
                     </div>
                     <div class="div-att-status-col">
-                        <input type="checkbox" class="check-att-status-col">
-                        <input type="number" class="input-att-status-col">
+                        <input type="checkbox" class="check-att-status-col" name="check_skillAthletics">
+                        <input type="number" class="input-att-status-col" name="input_skillAthletics">
                         <label class="label-att-status-col">Athletics (Str)</label>
                         <div class="clearfix"></div>
                     </div>
                     <div class="div-att-status-col">
-                        <input type="checkbox" class="check-att-status-col">
-                        <input type="number" class="input-att-status-col">
+                        <input type="checkbox" class="check-att-status-col" name="check_skillDeception">
+                        <input type="number" class="input-att-status-col" name="input_skillDeception">
                         <label class="label-att-status-col">Deception (Cha)</label>
                         <div class="clearfix"></div>
                     </div>
                     <div class="div-att-status-col">
-                        <input type="checkbox" class="check-att-status-col">
-                        <input type="number" class="input-att-status-col">
+                        <input type="checkbox" class="check-att-status-col" name="check_skillHistory">
+                        <input type="number" class="input-att-status-col" name="input_skillHistory">
                         <label class="label-att-status-col">History (Int)</label>
                         <div class="clearfix"></div>
                     </div>
                     <div>
-                        <input type="checkbox" class="check-att-status-col">
-                        <input type="number" class="input-att-status-col">
+                        <input type="checkbox" class="check-att-status-col" name="check_skillInsight">
+                        <input type="number" class="input-att-status-col" name="input_skillInsight">
                         <label class="label-att-status-col">Insight (Wis)</label>
                         <div class="clearfix"></div>
                     </div>
                     <div class="div-att-status-col">
-                        <input type="checkbox" class="check-att-status-col">
-                        <input type="number" class="input-att-status-col">
+                        <input type="checkbox" class="check-att-status-col" name="check_skillIntimidation">
+                        <input type="number" class="input-att-status-col" name="input_skillIntimidation">
                         <label class="label-att-status-col">Intimidation (Cha)</label>
                         <div class="clearfix"></div>
                     </div>
                     <div class="div-att-status-col">
-                        <input type="checkbox" class="check-att-status-col">
-                        <input type="number" class="input-att-status-col">
+                        <input type="checkbox" class="check-att-status-col" name="check_skillInvestigation">
+                        <input type="number" class="input-att-status-col" name="input_skillInvestigation">
                         <label class="label-att-status-col">Investigation (Int)</label>
                         <div class="clearfix"></div>
                     </div>
                     <div class="div-att-status-col">
-                        <input type="checkbox" class="check-att-status-col">
-                        <input type="number" class="input-att-status-col">
+                        <input type="checkbox" class="check-att-status-col" name="check_skillMedicine">
+                        <input type="number" class="input-att-status-col" name="input_skillMedicine">
                         <label class="label-att-status-col">Medicine (Wis)</label>
                         <div class="clearfix"></div>
                     </div>
                     <div class="div-att-status-col">
-                        <input type="checkbox" class="check-att-status-col">
-                        <input type="number" class="input-att-status-col">
+                        <input type="checkbox" class="check-att-status-col" name="check_skillNature">
+                        <input type="number" class="input-att-status-col" name="input_skillNature">
                         <label class="label-att-status-col">Nature (Int)</label>
                         <div class="clearfix"></div>
                     </div>
                     <div class="div-att-status-col">
-                        <input type="checkbox" class="check-att-status-col">
-                        <input type="number" class="input-att-status-col">
+                        <input type="checkbox" class="check-att-status-col" name="check_skillPerception">
+                        <input type="number" class="input-att-status-col" name="input_skillPerception">
                         <label class="label-att-status-col">Perception (Wis)</label>
                         <div class="clearfix"></div>
                     </div>
                     <div class="div-att-status-col">
-                        <input type="checkbox" class="check-att-status-col">
-                        <input type="number" class="input-att-status-col">
+                        <input type="checkbox" class="check-att-status-col" name="check_skillPerformance">
+                        <input type="number" class="input-att-status-col" name="input_skillPerformance">
                         <label class="label-att-status-col">Performance (Cha)</label>
                         <div class="clearfix"></div>
                     </div>
                     <div class="div-att-status-col">
-                        <input type="checkbox" class="check-att-status-col">
-                        <input type="number" class="input-att-status-col">
+                        <input type="checkbox" class="check-att-status-col" name="check_skillPersuasion">
+                        <input type="number" class="input-att-status-col" name="input_skillPersuasion">
                         <label class="label-att-status-col">Persuasion (Cha)</label>
                         <div class="clearfix"></div>
                     </div>
                     <div class="div-att-status-col">
-                        <input type="checkbox" class="check-att-status-col">
-                        <input type="number" class="input-att-status-col">
+                        <input type="checkbox" class="check-att-status-col" name="check_skillReligion">
+                        <input type="number" class="input-att-status-col" name="input_skillReligion">
                         <label class="label-att-status-col">Religion (Int)</label>
                         <div class="clearfix"></div>
                     </div>
                     <div class="div-att-status-col">
-                        <input type="checkbox" class="check-att-status-col">
-                        <input type="number" class="input-att-status-col">
+                        <input type="checkbox" class="check-att-status-col" name="check_skillSleightOfHand">
+                        <input type="number" class="input-att-status-col" name="input_skillSleightOfHand">
                         <label class="label-att-status-col">Sleight of Hand (Dex)</label>
                         <div class="clearfix"></div>
                     </div>
                     <div class="div-att-status-col">
-                        <input type="checkbox" class="check-att-status-col">
-                        <input type="number" class="input-att-status-col">
+                        <input type="checkbox" class="check-att-status-col" name="check_skillStealth">
+                        <input type="number" class="input-att-status-col" name="input_skillStealth">
                         <label class="label-att-status-col">Stealth (Dex)</label>
                         <div class="clearfix"></div>
                     </div>
                     <div class="div-att-status-col">
-                        <input type="checkbox" class="check-att-status-col">
-                        <input type="number" class="input-att-status-col">
+                        <input type="checkbox" class="check-att-status-col" name="check_skillSurvival">
+                        <input type="number" class="input-att-status-col" name="input_skillSurvival">
                         <label class="label-att-status-col">Survival (Wis)</label>
                         <div class="clearfix"></div>
                     </div>
@@ -294,21 +298,21 @@
                         <!-- Div relacionada a HP -->
                         <div>
                             <div class="div-hp">
-                                <input type="number" class="input-high">
+                                <input type="number" class="input-high" name="input_armor">
                                 <label>ARMOR CLASS</label>
                             </div>
                             <div class="div-hp">
-                                <input type="number" class="input-high">
+                                <input type="number" class="input-high" name="input_maxHp">
                                 <label>MAX HP</label>
                             </div>
                             <div class="div-hp">
-                                <input type="number" class="input-high">
+                                <input type="number" class="input-high" name="input_tempHp">
                                 <label>TEMP HP</label>
                             </div>
                             <div class="clearfix"></div>
                         </div>
                         <div class="div-hit">
-                            <input type="number" class="input-high">
+                            <input type="number" class="input-high" name="input_currentHp">
                             <label class="third-title">CURRENT HIT POINTS</label>
                         </div>
                     </div>
@@ -346,11 +350,11 @@
                         </div>
 
                         <div class="container-initiate-col-2">
-                            <input type="number" class="input-second-dices">
+                            <input type="number" class="input-second-dices" name="input_statusInitiate">
                             <label>INITIATE</label>
-                            <input type="number" class="input-second-dices">
+                            <input type="number" class="input-second-dices" name="input_statusSpeed">
                             <label>SPEED</label>
-                            <input type="number" class="input-second-dices">
+                            <input type="number" class="input-second-dices" name="input_statusVision">
                             <label>VISION</label>
                         </div>
                         <div class="clearfix"></div>
@@ -387,75 +391,37 @@
                         <tr class="tr-bLine">
                             <td>
                                 <div>
-                                    <input type="text">
+                                    <input type="text" name="input_spellsName1">
                                     <label name="statusCol_Str"></label>
                                 </div>
                             </td>
                             <td>
                                 <div>
-                                    <input type="text">
+                                    <input type="text" name="input_spellsAttack1">
                                     <label name="statusCol_Str"></label>
                                 </div>
                             </td>
                             <td>
                                 <div>
-                                    <input type="text">
+                                    <input type="text" name="input_spellsDamage1">
                                     <label name="statusCol_Str"></label>
                                 </div>
                             </td>
                             <td>
                                 <div>
-                                    <input type="text">
+                                    <input type="text" name="input_spellsRange1">
                                     <label name="statusCol_Str"></label>
                                 </div>
                             </td>
                             <td>
                                 <div>
-                                    <input type="text">
+                                    <input type="text" name="input_spellsAmmo1">
                                     <label name="statusCol_Str"></label>
                                 </div>
                             </td>
                             <td>
                                 <div>
-                                    <input type="text">
-                                    <label name="statusCol_Str"></label>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="tr-bLine">
-                            <td>
-                                <div>
-                                    <input type="text">
-                                    <label name="statusCol_Str"></label>
-                                </div>
-                            </td>
-                            <td>
-                                <div>
-                                    <input type="text">
-                                    <label name="statusCol_Str"></label>
-                                </div>
-                            </td>
-                            <td>
-                                <div>
-                                    <input type="text">
-                                    <label name="statusCol_Str"></label>
-                                </div>
-                            </td>
-                            <td>
-                                <div>
-                                    <input type="text">
-                                    <label name="statusCol_Str"></label>
-                                </div>
-                            </td>
-                            <td>
-                                <div>
-                                    <input type="text">
-                                    <label name="statusCol_Str"></label>
-                                </div>
-                            </td>
-                            <td>
-                                <div>
-                                    <input type="text">
+                                    <input type="text" name="input_spellsUsed1">
                                     <label name="statusCol_Str"></label>
                                 </div>
                             </td>
@@ -463,75 +429,37 @@
                         <tr class="tr-bLine">
                             <td>
                                 <div>
-                                    <input type="text">
+                                    <input type="text" name="input_spellsName2">
                                     <label name="statusCol_Str"></label>
                                 </div>
                             </td>
                             <td>
                                 <div>
-                                    <input type="text">
+                                    <input type="text" name="input_spellsAttack2">
                                     <label name="statusCol_Str"></label>
                                 </div>
                             </td>
                             <td>
                                 <div>
-                                    <input type="text">
+                                    <input type="text" name="input_spellsDamage2">
                                     <label name="statusCol_Str"></label>
                                 </div>
                             </td>
                             <td>
                                 <div>
-                                    <input type="text">
+                                    <input type="text" name="input_spellsRange2">
                                     <label name="statusCol_Str"></label>
                                 </div>
                             </td>
                             <td>
                                 <div>
-                                    <input type="text">
+                                    <input type="text" name="input_spellsAmmo2">
                                     <label name="statusCol_Str"></label>
                                 </div>
                             </td>
                             <td>
                                 <div>
-                                    <input type="text">
-                                    <label name="statusCol_Str"></label>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="tr-bLine">
-                            <td>
-                                <div>
-                                    <input type="text">
-                                    <label name="statusCol_Str"></label>
-                                </div>
-                            </td>
-                            <td>
-                                <div>
-                                    <input type="text">
-                                    <label name="statusCol_Str"></label>
-                                </div>
-                            </td>
-                            <td>
-                                <div>
-                                    <input type="text">
-                                    <label name="statusCol_Str"></label>
-                                </div>
-                            </td>
-                            <td>
-                                <div>
-                                    <input type="text">
-                                    <label name="statusCol_Str"></label>
-                                </div>
-                            </td>
-                            <td>
-                                <div>
-                                    <input type="text">
-                                    <label name="statusCol_Str"></label>
-                                </div>
-                            </td>
-                            <td>
-                                <div>
-                                    <input type="text">
+                                    <input type="text" name="input_spellsUsed2">
                                     <label name="statusCol_Str"></label>
                                 </div>
                             </td>
@@ -539,75 +467,37 @@
                         <tr class="tr-bLine">
                             <td>
                                 <div>
-                                    <input type="text">
+                                    <input type="text" name="input_spellsName3">
                                     <label name="statusCol_Str"></label>
                                 </div>
                             </td>
                             <td>
                                 <div>
-                                    <input type="text">
+                                    <input type="text" name="input_spellsAttack3">
                                     <label name="statusCol_Str"></label>
                                 </div>
                             </td>
                             <td>
                                 <div>
-                                    <input type="text">
+                                    <input type="text" name="input_spellsDamage3">
                                     <label name="statusCol_Str"></label>
                                 </div>
                             </td>
                             <td>
                                 <div>
-                                    <input type="text">
+                                    <input type="text" name="input_spellsRange3">
                                     <label name="statusCol_Str"></label>
                                 </div>
                             </td>
                             <td>
                                 <div>
-                                    <input type="text">
+                                    <input type="text" name="input_spellsAmmo3">
                                     <label name="statusCol_Str"></label>
                                 </div>
                             </td>
                             <td>
                                 <div>
-                                    <input type="text">
-                                    <label name="statusCol_Str"></label>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="tr-bLine">
-                            <td>
-                                <div>
-                                    <input type="text">
-                                    <label name="statusCol_Str"></label>
-                                </div>
-                            </td>
-                            <td>
-                                <div>
-                                    <input type="text">
-                                    <label name="statusCol_Str"></label>
-                                </div>
-                            </td>
-                            <td>
-                                <div>
-                                    <input type="text">
-                                    <label name="statusCol_Str"></label>
-                                </div>
-                            </td>
-                            <td>
-                                <div>
-                                    <input type="text">
-                                    <label name="statusCol_Str"></label>
-                                </div>
-                            </td>
-                            <td>
-                                <div>
-                                    <input type="text">
-                                    <label name="statusCol_Str"></label>
-                                </div>
-                            </td>
-                            <td>
-                                <div>
-                                    <input type="text">
+                                    <input type="text" name="input_spellsUsed3">
                                     <label name="statusCol_Str"></label>
                                 </div>
                             </td>
@@ -615,37 +505,151 @@
                         <tr class="tr-bLine">
                             <td>
                                 <div>
-                                    <input type="text">
+                                    <input type="text" name="input_spellsName4">
                                     <label name="statusCol_Str"></label>
                                 </div>
                             </td>
                             <td>
                                 <div>
-                                    <input type="text">
+                                    <input type="text" name="input_spellsAttack4">
                                     <label name="statusCol_Str"></label>
                                 </div>
                             </td>
                             <td>
                                 <div>
-                                    <input type="text">
+                                    <input type="text" name="input_spellsDamage4">
                                     <label name="statusCol_Str"></label>
                                 </div>
                             </td>
                             <td>
                                 <div>
-                                    <input type="text">
+                                    <input type="text" name="input_spellsRange4">
                                     <label name="statusCol_Str"></label>
                                 </div>
                             </td>
                             <td>
                                 <div>
-                                    <input type="text">
+                                    <input type="text" name="input_spellsAmmo4">
                                     <label name="statusCol_Str"></label>
                                 </div>
                             </td>
                             <td>
                                 <div>
-                                    <input type="text">
+                                    <input type="text" name="input_spellsUsed4">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="tr-bLine">
+                            <td>
+                                <div>
+                                    <input type="text" name="input_spellsName5">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" name="input_spellsAttack5">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" name="input_spellsDamage5">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" name="input_spellsRange5">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" name="input_spellsAmmo5">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" name="input_spellsUsed5">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="tr-bLine">
+                            <td>
+                                <div>
+                                    <input type="text" name="input_spellsName6">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" name="input_spellsAttack6">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" name="input_spellsDamage6">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" name="input_spellsRange6">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" name="input_spellsAmmo6">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" name="input_spellsUsed6">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="tr-bLine">
+                            <td>
+                                <div>
+                                    <input type="text" name="input_spellsName7">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" name="input_spellsAttack7">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" name="input_spellsDamage7">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" name="input_spellsRange7">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" name="input_spellsAmmo7">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" name="input_spellsUsed7">
                                     <label name="statusCol_Str"></label>
                                 </div>
                             </td>
@@ -661,27 +665,13 @@
                         <tr>
                             <td>
                                 <div>
-                                    <input type="text">
+                                    <input type="text" name="input_featAndTraits11">
                                     <label name="statusCol_Str"></label>
                                 </div>
                             </td>
                             <td>
                                 <div>
-                                    <input type="text">
-                                    <label name="statusCol_Str"></label>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div>
-                                    <input type="text">
-                                    <label name="statusCol_Str"></label>
-                                </div>
-                            </td>
-                            <td>
-                                <div>
-                                    <input type="text">
+                                    <input type="text" name="input_featAndTraits12">
                                     <label name="statusCol_Str"></label>
                                 </div>
                             </td>
@@ -689,27 +679,13 @@
                         <tr>
                             <td>
                                 <div>
-                                    <input type="text">
+                                    <input type="text" name="input_featAndTraits13">
                                     <label name="statusCol_Str"></label>
                                 </div>
                             </td>
                             <td>
                                 <div>
-                                    <input type="text">
-                                    <label name="statusCol_Str"></label>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div>
-                                    <input type="text">
-                                    <label name="statusCol_Str"></label>
-                                </div>
-                            </td>
-                            <td>
-                                <div>
-                                    <input type="text">
+                                    <input type="text" name="input_featAndTraits14">
                                     <label name="statusCol_Str"></label>
                                 </div>
                             </td>
@@ -717,13 +693,41 @@
                         <tr>
                             <td>
                                 <div>
-                                    <input type="text">
+                                    <input type="text" name="input_featAndTraits15">
                                     <label name="statusCol_Str"></label>
                                 </div>
                             </td>
                             <td>
                                 <div>
-                                    <input type="text">
+                                    <input type="text" name="input_featAndTraits21">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>
+                                    <input type="text" name="input_featAndTraits22">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" name="input_featAndTraits23">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>
+                                    <input type="text" name="input_featAndTraits24">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" name="input_featAndTraits25">
                                     <label name="statusCol_Str"></label>
                                 </div>
                             </td>
@@ -740,58 +744,58 @@
         <div name="bot_Section" class="table bottom-section">
             <div class="bottom-col-1 container container-border">
                 <input type="text" class="input-bottom" style="margin-top: 2%">
-                <input type="text" class="input-bottom">
-                <input type="text" class="input-bottom">
-                <input type="text" class="input-bottom">
-                <input type="text" class="input-bottom">
-                <input type="text" class="input-bottom">
-                <input type="text" class="input-bottom">
-                <input type="text" class="input-bottom">
-                <input type="text" class="input-bottom">
+                <input type="text" class="input-bottom" name="input_profAndLang1">
+                <input type="text" class="input-bottom" name="input_profAndLang2">
+                <input type="text" class="input-bottom" name="input_profAndLang3">
+                <input type="text" class="input-bottom" name="input_profAndLang4">
+                <input type="text" class="input-bottom" name="input_profAndLang5">
+                <input type="text" class="input-bottom" name="input_profAndLang6">
+                <input type="text" class="input-bottom" name="input_profAndLang7">
+                <input type="text" class="input-bottom" name="input_profAndLang8">
                 <br>
                 <label class="second-title">OTHER PROFICIENCIES & LANGUAGES</label>
             </div>
             <div class="bottom-col-2 container container-border">
                 <div class="bottom-col-sec">
-                    <input type="text" class="input-bottom">
-                    <input type="text" class="input-bottom">
-                    <input type="text" class="input-bottom">
-                    <input type="text" class="input-bottom">
-                    <input type="text" class="input-bottom">
-                    <input type="text" class="input-bottom">
-                    <input type="text" class="input-bottom">
-                    <input type="text" class="input-bottom">
+                    <input type="text" class="input-bottom" name="input_equipamentInfo11">
+                    <input type="text" class="input-bottom" name="input_equipamentInfo12">
+                    <input type="text" class="input-bottom" name="input_equipamentInfo13">
+                    <input type="text" class="input-bottom" name="input_equipamentInfo14">
+                    <input type="text" class="input-bottom" name="input_equipamentInfo15">
+                    <input type="text" class="input-bottom" name="input_equipamentInfo16">
+                    <input type="text" class="input-bottom" name="input_equipamentInfo17">
+                    <input type="text" class="input-bottom" name="input_equipamentInfo18">
                 </div>
                 <div class="bottom-col-sec">
-                    <input type="text" class="input-bottom">
-                    <input type="text" class="input-bottom">
-                    <input type="text" class="input-bottom">
-                    <input type="text" class="input-bottom">
-                    <input type="text" class="input-bottom">
-                    <input type="text" class="input-bottom">
-                    <input type="text" class="input-bottom">
-                    <input type="text" class="input-bottom">
+                    <input type="text" class="input-bottom" name="input_equipamentInfo21">
+                    <input type="text" class="input-bottom" name="input_equipamentInfo22">
+                    <input type="text" class="input-bottom" name="input_equipamentInfo23">
+                    <input type="text" class="input-bottom" name="input_equipamentInfo24">
+                    <input type="text" class="input-bottom" name="input_equipamentInfo25">
+                    <input type="text" class="input-bottom" name="input_equipamentInfo26">
+                    <input type="text" class="input-bottom" name="input_equipamentInfo27">
+                    <input type="text" class="input-bottom" name="input_equipamentInfo28">
                 </div>
                 <div name="secondary" class="div-col-2">
                     <div class="div-secondary-col-2">
                         <label class="label-secondary-col-2">C  </label>
-                        <input class="input-secondary-col-2" type="text">
+                        <input class="input-secondary-col-2" type="text" name="input_equipamentC">
                     </div>
                     <div class="div-secondary-col-2">
                         <label class="label-secondary-col-2">S  </label>
-                        <input class="input-secondary-col-2" type="text">
+                        <input class="input-secondary-col-2" type="text" name="input_equipamentS">
                     </div>
                     <div class="div-secondary-col-2">
                         <label class="label-secondary-col-2">E  </label>
-                        <input class="input-secondary-col-2" type="text">
+                        <input class="input-secondary-col-2" type="text" name="input_equipamentE">
                     </div>
                     <div class="div-secondary-col-2">
                         <label class="label-secondary-col-2">G  </label>
-                        <input class="input-secondary-col-2" type="text">
+                        <input class="input-secondary-col-2" type="text" name="input_equipamentG">
                     </div>
                     <div class="div-secondary-col-2">
                         <label class="label-secondary-col-2">P  </label>
-                        <input class="input-secondary-col-2" type="text">
+                        <input class="input-secondary-col-2" type="text" name="input_equipamentP">
                     </div>
                 </div>
                 <div class="clearfix"></div>
@@ -799,7 +803,6 @@
                 <label class="second-title">INVENTORY & EQUIPMENT</label>
             </div>
         </div>
-
     </div>
     <!-- GOOOOOOD DIV -->
 </body>

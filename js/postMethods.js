@@ -1,15 +1,16 @@
 function loginPost() {
     $.post("controller/loginController.php",
         {
+            tag: 'login',
             login: $("#input_login").val(),
             passwd: $("#input_pwd").val()
         },
         function (data, status) {
             console.log(data);
-            if (data == "1") {
+            if (~data.indexOf("1")) {
                 location.href = "view/homePage.html";
             } else {
-                if (data == "0") {
+                if (~data.indexOf("0")) {
                     document.getElementById("result").innerHTML = "User not found!";
                 } else {
                     document.getElementById("result").innerHTML = "Invalid password";

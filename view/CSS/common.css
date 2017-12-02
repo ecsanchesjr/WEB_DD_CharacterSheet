@@ -20,7 +20,8 @@ input[type="number"]{
 
 
 button{
-    background-color: #EBA942;
+    /* background-color: #EBA942; */
+    background-color: rgb(212, 178, 112);
     font-size: 1.3em;
     color: #000000;
     border-radius: 6px;
@@ -32,6 +33,7 @@ button{
 
 button:hover{
     box-shadow: 2px 2px 5px #000000;
+    background-color: rgb(212, 188, 121)
 }
 
 html,body {

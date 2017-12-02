@@ -10,7 +10,8 @@ form{
 
 .navbar{
     width: 100%;
-    background-color: #EBA942;
+    /* background-color: #EBA942; */
+    background-color: rgb(209, 179, 124);
     border: 1px solid black;
     text-align: left;
     position: fixed;

@@ -6,6 +6,14 @@
     text-shadow: 3px 3px 3px #000000;
 }
 
+.grid-top{
+    width: 50%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 60% 30%;
+    grid-column-gap: 10%;
+}
+
 .grid{
     display: grid;
     grid-template-columns: 40% 20% 12.5% 12.5%;
@@ -32,4 +40,32 @@
     border-color: black;
     margin: 10% auto;
     padding: 0;
+}
+
+@media screen and (max-width: 960px){
+    button{
+        font-size: 1.2em;
+    }
+    .grid{
+        grid-template-columns: 40% 20% 15% 15%;
+        grid-column-gap: 3.33%;
+    }
+    .grid-top{
+        grid-template-columns: 60% 38%;
+        grid-column-gap: 2%;
+    }
+}
+
+@media screen and (max-width: 640px){
+    button{
+        font-size: 1em;
+    }
+    .grid{
+        grid-template-columns: 40% 20% 15% 15%;
+        grid-column-gap: 3.33%;
+    }
+    .grid-top{
+        grid-template-columns: 60% 38%;
+        grid-column-gap: 2%;
+    }
 }

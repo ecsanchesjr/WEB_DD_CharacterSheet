@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Player Login</title>
+    <link rel="stylesheet" href="view/CSS/common.css" type="text/css">
+    <link rel="stylesheet" href="view/CSS/login.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/postMethods.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <img src="view/images/logo.png" alt="Dungeons And Dragons Character Sheet" width="100%">
+        </div>
+        <label class="title-page-label">Player Login</label>
+        <form id="loginform" onsubmit="loginPost(); return false;">
+            <div>
+                <input type="text" id="input_login" placeholder="Insert your login..." class="input-login" autofocus required>
+
+                <input type="password" id="input_pwd" placeholder="Insert your pass..." class="input-login" required>
+            </div>
+            <div>
+                <button type="button" onclick="location.href='view/registerPage.html'">Register</button>
+                <button type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

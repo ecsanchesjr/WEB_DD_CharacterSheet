@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Player Register</title>
+    <link rel="stylesheet" href="CSS/common.css" type="text/css">
+    <link rel="stylesheet" href="CSS/login.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <script src="../js/postMethods.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <img src="images/logo.png" alt="Dungeons And Dragons Character Sheet" width="100%">
+        </div>
+        <label class="title-page-label">Player Register</label>
+        <form onsubmit="registerPost(); return false;">
+            <div>
+                <input type="text" id="input_login" pattern="[A-Za-z0-9]{4,}" title="Four or more letters or numbers" required placeholder="Insert your login..."
+                    class="input-login" autofocus>
+                <input type="email" id="input_email" required placeholder="Insert a valid e-mail..." class="input-login">
+                <input type="password" id="input_pwd1" required placeholder="Insert your password" class="input-login">
+                <input type="password" id="input_pwd2" required placeholder="Repeat your password" class="input-login">
+            </div>
+            <div class="grid">
+                <button onclick="window.history.back()">Return</button>
+                <button type="submit" value="Submit">Register</button>
+            </div>
+        </form>
+    </div>
+</body>
+<footer>
+    <div id="ex" class="modal">
+        <p id="result"></p>
+    </div>
+</footer>
+
+</html>

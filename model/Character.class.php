@@ -1,6 +1,45 @@
 <?php 
 
 class Character{
+    // Basic Infos
+    public $charName;
+    public $charLevel;
+    public $charRace;
+    public $charExp; 
+    public $charBack;
+    public $charAlign; 
+    public $charPlayer; 
+    public $charGroup; 
+
+    //??
+    public $inspiration; 
+    public $profBonus; 
+    public $passivePerc; 
+
+    // Obj Attributes
+    public $attribs;
+
+    // Obj SavingThrows
+    public $savingThrows;
+
+    // Obj Skill
+    public $skills;
+
+    // Obj Status
+    public $status;
+
+    // Obj AtaksAndSpells
+    public $attacks;
+
+    // String with separators
+    public $featAndTraits;
+    public $profAndLang;
+
+    // Obj Equipment
+    public $equips;
+}
+
+/* class Character{
     public $charName;
     public $charLevel;
     public $charRace;
@@ -67,5 +106,5 @@ class Character{
     public $equipE; 
     public $equipG; 
     public $equipP; 
-}
+} */
 ?>

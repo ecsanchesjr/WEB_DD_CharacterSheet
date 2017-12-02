@@ -1,8 +1,19 @@
 <?
-    if(isset($_POST["data"])){
-        $data = $_POST["data"];
-    }
+    require_once("../model/User.class.php");
 
-    print_r($data);
+    
+    $data = $_POST["charData"];
+
+    //print_r($data);
+
+    foreach($data as $name => $value){
+        echo $name;
+        if($name == "featAndTraits"){
+            print_r($value);
+            echo "\n\n\n";
+            print_r(explode("|", $value, -1));
+        }
+    } 
+
 
 ?>

@@ -1,5 +1,12 @@
 <?php 
 
+require_once("CharClasses/AtksAndSpells.class.php");
+require_once("CharClasses/Attributes.class.php");
+require_once("CharClasses/Equipment.class.php");
+require_once("CharClasses/SavingThrows.class.php");
+require_once("CharClasses/Status.class.php");
+require_once("CharClasses/Skill.class.php");
+
 class Character{
     // Basic Infos
     public $charName;

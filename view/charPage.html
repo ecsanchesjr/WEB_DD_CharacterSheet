@@ -27,12 +27,12 @@
                 </div>
                 <!-- <h1 class="title">Dungeons & Dragons</h1> -->
                 <div class="subcontainer subcontainer-0">
-                    <input class="info-inputs" type="text" name="input_charNome">
+                    <input class="info-inputs" type="text" name="input_charNome" required>
                     <br>
                     <label class="labels-char-infos">Name</label>
                 </div>
                 <div class="subcontainer subcontainer-1">
-                    <input class="info-inputs" type="number" name="input_charLevel">
+                    <input class="info-inputs" type="number" name="input_charLevel" required>
                     <br>
                     <label class="labels-char-infos">Level</label>
                 </div>
@@ -42,12 +42,12 @@
             <div name="div_charInfos2" class="container-border container container-1 row">
                 <div class="subcontainer subcontainer-2">
                     <div class="div-char-infos-section1">
-                        <input type="text" name="input_charRace">
+                        <input type="text" name="input_charRace" required>
                         <br>
                         <label class="labels-char-infos-1">Race & Class</label>
                     </div>
                     <div class="div-char-infos-section1-bot">
-                        <input type="number" name="input_charExp">
+                        <input type="number" name="input_charExp" required>
                         <br>
                         <label class="labels-char-infos-1">Experience Points</label>
                     </div>
@@ -55,12 +55,12 @@
 
                 <div class="subcontainer subcontainer-2">
                     <div class="div-char-infos-section1">
-                        <input type="text" name="input_charBack">
+                        <input type="text" name="input_charBack" required>
                         <br>
                         <label class="labels-char-infos-1">Background</label>
                     </div>
                     <div class="div-char-infos-section1-bot">
-                        <input type="text" name="input_charAlign">
+                        <input type="text" name="input_charAlign" required>
                         <br>
                         <label class="labels-char-infos-1">Alignment</label>
                     </div>
@@ -68,12 +68,12 @@
 
                 <div class="subcontainer subcontainer-2">
                     <div class="div-char-infos-section1">
-                        <input type="text" name="input_charPlayer">
+                        <input type="text" name="input_charPlayer" required>
                         <br>
                         <label class="labels-char-infos-1">Player Name</label>
                     </div>
                     <div class="div-char-infos-section1-bot">
-                        <input type="text" name="input_charGroup">
+                        <input type="text" name="input_charGroup" required>
                         <br>
                         <label class="labels-char-infos-1">Adventuring Group</label>
                     </div>
@@ -91,37 +91,37 @@
             <div id="attribCol" class="container-border container status-col row">
                 <div>
                     <label class="label-status">Strength</label>
-                    <input type="number" class="input-high" name="input_atribStr">
+                    <input type="number" class="input-high" name="input_atribStr" required>
                     <label name="statusCol_Str" class="labels-status-col">----</label>
                 </div>
                 <br>
                 <div>
                     <label class="label-status">Dexterity</label>
-                    <input type="number" class="input-high" name="input_atribDex">
+                    <input type="number" class="input-high" name="input_atribDex" required>
                     <label name="statusCol_Dex" class="labels-status-col">----</label>
                 </div>
                 <br>
                 <div>
                     <label class="label-status">Constituition</label>
-                    <input type="number" class="input-high" name="input_atribCon">
+                    <input type="number" class="input-high" name="input_atribCon" required>
                     <label name="statusCol_Con" class="labels-status-col">----</label>
                 </div>
                 <br>
                 <div>
                     <label class="label-status">Intelligence</label>
-                    <input type="number" class="input-high" name="input_atribInt">
+                    <input type="number" class="input-high" name="input_atribInt" required>
                     <label name="statusCol_Int" class="labels-status-col">----</label>
                 </div>
                 <br>
                 <div>
                     <label class="label-status">Wisdom</label>
-                    <input type="number" class="input-high" name="input_atribWis">
+                    <input type="number" class="input-high" name="input_atribWis" required>
                     <label name="statusCol_Wis" class="labels-status-col">----</label>
                 </div>
                 <br>
                 <div>
                     <label class="label-status">Charisma</label>
-                    <input type="number" class="input-high" name="input_atribCha">
+                    <input type="number" class="input-high" name="input_atribCha" required>
                     <label name="statusCol_Cha" class="labels-status-col">----</label>
                 </div>
             </div>
@@ -310,21 +310,21 @@
                         <!-- Div relacionada a HP -->
                         <div>
                             <div class="div-hp">
-                                <input type="number" class="input-high" name="input_armor">
+                                <input type="number" class="input-high" name="input_armor" required>
                                 <label>ARMOR CLASS</label>
                             </div>
                             <div class="div-hp">
-                                <input type="number" class="input-high" name="input_maxHp">
+                                <input type="number" class="input-high" name="input_maxHp" required>
                                 <label>MAX HP</label>
                             </div>
                             <div class="div-hp">
-                                <input type="number" class="input-high" name="input_tempHp">
+                                <input type="number" class="input-high" name="input_tempHp" required>
                                 <label>TEMP HP</label>
                             </div>
                             <div class="clearfix"></div>
                         </div>
                         <div class="div-hit">
-                            <input type="number" class="input-high" name="input_currentHp">
+                            <input type="number" class="input-high" name="input_currentHp" required>
                             <label class="third-title">CURRENT HIT POINTS</label>
                         </div>
                     </div>
@@ -362,11 +362,11 @@
                         </div>
 
                         <div class="container-initiate-col-2">
-                            <input type="number" class="input-second-dices" name="input_statusInitiate">
+                            <input type="number" class="input-second-dices" name="input_statusInitiate" required>
                             <label>INITIATE</label>
-                            <input type="number" class="input-second-dices" name="input_statusSpeed">
+                            <input type="number" class="input-second-dices" name="input_statusSpeed" required>
                             <label>SPEED</label>
-                            <input type="number" class="input-second-dices" name="input_statusVision">
+                            <input type="number" class="input-second-dices" name="input_statusVision" required>
                             <label>VISION</label>
                         </div>
                         <div class="clearfix"></div>

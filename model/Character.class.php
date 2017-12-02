@@ -6,6 +6,7 @@ require_once("CharClasses/Equipment.class.php");
 require_once("CharClasses/SavingThrows.class.php");
 require_once("CharClasses/Status.class.php");
 require_once("CharClasses/Skill.class.php");
+require_once("DBCon.php");
 
 class Character{
     // Basic Infos
@@ -44,6 +45,30 @@ class Character{
 
     // Obj Equipment
     public $equips;
+
+    public function insertChar(){
+        $con = startCon();
+        
+        if(!insertBasicInfos($con)){
+            echo "basics";
+        }
+    }
+
+    private function insertBasicInfos($con){
+
+        $query = $con->prepare("INSERT INTO `web`.`Character` (`char_name`, `char_level`, `char_class`, `char_background`, `char_playername`, `char_exppoints`, `char_alignment`, `char_advgroup`) VALUES (:name, :level, :class, :back, :player, :exp, :align, :group);");
+
+        $query->bindParam(":name", $this->charName);
+        $query->bindParam(":level", $this->charLevel);
+        $query->bindParam(":class", $this->charRace);
+        $query->bindParam(":back", $this->charBack);
+        $query->bindParam(":player", $this->charPlayer);
+        $query->bindParam(":exp", $this->charExp);
+        $query->bindParam(":align", $this->charAlign);
+        $query->bindParam(":group", $this->charGroup);
+
+        return($query->execute());
+    }
 }
 
 /* class Character{
@@ -114,4 +139,5 @@ class Character{
     public $equipG; 
     public $equipP; 
 } */
+
 ?>

@@ -20,6 +20,17 @@ function loginPost() {
         });
 }
 
+function logoutPost() {
+    $.post("../controller/loginController.php", 
+    {
+        tag: 'logoff'
+    },
+    function (data,status) {
+        if (status == "success")
+            window.location.href = "../index.html";
+    });
+}
+
 function registerPost() {
     var login, email, passwd1, passwd2;
 
@@ -56,10 +67,10 @@ function registerPost() {
                 }
                 $("#ex").modal();
             });
-} else {
-    document.getElementById("result").innerHTML = "Passwords not match!";
-    $('#ex').modal();
-    $("#input_pwd1").css('background-color', '#FFDBDB');
-    $("#input_pwd2").css('background-color', '#FFDBDB');
-}
+    } else {
+        document.getElementById("result").innerHTML = "Passwords not match!";
+        $('#ex').modal();
+        $("#input_pwd1").css('background-color', '#FFDBDB');
+        $("#input_pwd2").css('background-color', '#FFDBDB');
+    }
 }

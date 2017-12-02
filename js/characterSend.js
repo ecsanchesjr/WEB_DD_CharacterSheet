@@ -12,6 +12,7 @@ function get(name) {
 function submit() {
     $.post("../controller/characterController.php",
         {
+            actionTag: 'send',
             charData: getJson()
         }, function (data, status) {
             console.log(data);

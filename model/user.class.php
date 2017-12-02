@@ -1,4 +1,7 @@
 <?php 
+
+require_once("DBCon.php");
+
 class User{
     private $username;
     private $password;
@@ -26,8 +29,6 @@ class User{
 
     public function validateUser(){
 
-        require_once("DBCon.php");
-
         $db = startCon();
 
         $query = $db->prepare("SELECT * FROM `web`.`Player` WHERE `player_login` = :login;");
@@ -38,8 +39,6 @@ class User{
     }
 
     public function createUser(){
-        
-        require_once("DBCon.php");
         
         $db = startCon();
         $query = $db->prepare("INSERT INTO `web`.`Player` (`player_login`, `player_email`, `player_pwd`) VALUES (:login, :email, :pass);");
@@ -53,8 +52,7 @@ class User{
     
     
     public function uniqueUser(){
-        require_once("DBCon.php");
-
+        
         $db = startCon();
         $query = $db->prepare("SELECT * FROM `web`.`Player` WHERE `player_login` = :login;");
         $query->bindParam(":login", $this->username);
@@ -65,7 +63,6 @@ class User{
     }
 
     public function uniqueEmail(){
-        require_once("DBCon.php");
 
         $db = startCon();
         $query = $db->prepare("SELECT * FROM `web`.`Player` WHERE `player_email`=:email;");

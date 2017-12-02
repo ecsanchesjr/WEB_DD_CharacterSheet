@@ -8,19 +8,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema web
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema web
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `web` DEFAULT CHARACTER SET utf8 ;
+USE `web` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`Player`
+-- Table `web`.`Player`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Player` (
+CREATE TABLE IF NOT EXISTS `web`.`Player` (
   `player_login` VARCHAR(15) NOT NULL,
   `player_email` VARCHAR(60) NOT NULL,
   `player_pwd` VARCHAR(20) NOT NULL,
@@ -30,9 +30,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Character`
+-- Table `web`.`Character`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Character` (
+CREATE TABLE IF NOT EXISTS `web`.`Character` (
   `char_name` VARCHAR(45) NOT NULL,
   `char_level` INT NOT NULL,
   `char_class` VARCHAR(45) NOT NULL,
@@ -45,16 +45,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Character` (
   INDEX `player_char_idx` (`char_playername` ASC),
   CONSTRAINT `player_char`
     FOREIGN KEY (`char_playername`)
-    REFERENCES `mydb`.`Player` (`player_login`)
+    REFERENCES `web`.`Player` (`player_login`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Attributes`
+-- Table `web`.`Attributes`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Attributes` (
+CREATE TABLE IF NOT EXISTS `web`.`Attributes` (
   `att_strength` INT NULL DEFAULT 0,
   `att_dexterity` INT NULL DEFAULT 0,
   `att_constituition` INT NULL DEFAULT 0,
@@ -70,21 +70,21 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Attributes` (
   INDEX `fk_char2_idx` (`att_charplayername` ASC),
   CONSTRAINT `fk_char1`
     FOREIGN KEY (`att_charname`)
-    REFERENCES `mydb`.`Character` (`char_name`)
+    REFERENCES `web`.`Character` (`char_name`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_char2`
     FOREIGN KEY (`att_charplayername`)
-    REFERENCES `mydb`.`Character` (`char_playername`)
+    REFERENCES `web`.`Character` (`char_playername`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`SavingThrows`
+-- Table `web`.`SavingThrows`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`SavingThrows` (
+CREATE TABLE IF NOT EXISTS `web`.`SavingThrows` (
   `sv_charname` VARCHAR(45) NOT NULL,
   `sv_charplayername` VARCHAR(45) NOT NULL,
   `sv_strength` INT NULL,
@@ -97,21 +97,21 @@ CREATE TABLE IF NOT EXISTS `mydb`.`SavingThrows` (
   INDEX `fk_SavingThrows_2_idx` (`sv_charplayername` ASC),
   CONSTRAINT `fk_SavingThrows_1`
     FOREIGN KEY (`sv_charname`)
-    REFERENCES `mydb`.`Character` (`char_name`)
+    REFERENCES `web`.`Character` (`char_name`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_SavingThrows_2`
     FOREIGN KEY (`sv_charplayername`)
-    REFERENCES `mydb`.`Character` (`char_playername`)
+    REFERENCES `web`.`Character` (`char_playername`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Skills`
+-- Table `web`.`Skills`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Skills` (
+CREATE TABLE IF NOT EXISTS `web`.`Skills` (
   `skills_charname` VARCHAR(45) NOT NULL,
   `skills_charplayername` VARCHAR(45) NOT NULL,
   `skills_acrobatics` INT NULL DEFAULT 0,
@@ -137,21 +137,21 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Skills` (
   PRIMARY KEY (`skills_charname`, `skills_charplayername`),
   CONSTRAINT `fk_Skills_1`
     FOREIGN KEY (`skills_charname`)
-    REFERENCES `mydb`.`Character` (`char_name`)
+    REFERENCES `web`.`Character` (`char_name`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Skills_2`
     FOREIGN KEY (`skills_charplayername`)
-    REFERENCES `mydb`.`Character` (`char_playername`)
+    REFERENCES `web`.`Character` (`char_playername`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Attacks`
+-- Table `web`.`Attacks`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Attacks` (
+CREATE TABLE IF NOT EXISTS `web`.`Attacks` (
   `attack_charname` VARCHAR(45) NOT NULL,
   `attack_charplayername` VARCHAR(45) NOT NULL,
   `attack_name` VARCHAR(30) NULL,
@@ -164,21 +164,21 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Attacks` (
   INDEX `fk_Attacks_2_idx` (`attack_charplayername` ASC),
   CONSTRAINT `fk_Attacks_1`
     FOREIGN KEY (`attack_charname`)
-    REFERENCES `mydb`.`Character` (`char_name`)
+    REFERENCES `web`.`Character` (`char_name`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Attacks_2`
     FOREIGN KEY (`attack_charplayername`)
-    REFERENCES `mydb`.`Character` (`char_playername`)
+    REFERENCES `web`.`Character` (`char_playername`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Features`
+-- Table `web`.`Features`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Features` (
+CREATE TABLE IF NOT EXISTS `web`.`Features` (
   `features_charname` VARCHAR(45) NULL,
   `features_charplayername` VARCHAR(45) NULL,
   `features_information` VARCHAR(800) NULL,
@@ -186,21 +186,21 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Features` (
   INDEX `fk_Features_2_idx` (`features_charplayername` ASC),
   CONSTRAINT `fk_Features_1`
     FOREIGN KEY (`features_charname`)
-    REFERENCES `mydb`.`Character` (`char_name`)
+    REFERENCES `web`.`Character` (`char_name`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Features_2`
     FOREIGN KEY (`features_charplayername`)
-    REFERENCES `mydb`.`Character` (`char_playername`)
+    REFERENCES `web`.`Character` (`char_playername`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`ProfAndLang`
+-- Table `web`.`ProfAndLang`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`ProfAndLang` (
+CREATE TABLE IF NOT EXISTS `web`.`ProfAndLang` (
   `profandlang_charname` VARCHAR(45) NOT NULL,
   `profandlang_charplayername` VARCHAR(45) NOT NULL,
   `profandlang_information` VARCHAR(800) NULL,
@@ -208,21 +208,21 @@ CREATE TABLE IF NOT EXISTS `mydb`.`ProfAndLang` (
   INDEX `fk_ProfAndLang_1_idx` (`profandlang_charname` ASC),
   CONSTRAINT `fk_ProfAndLang_1`
     FOREIGN KEY (`profandlang_charname`)
-    REFERENCES `mydb`.`Character` (`char_name`)
+    REFERENCES `web`.`Character` (`char_name`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_ProfAndLang_2`
     FOREIGN KEY (`profandlang_charplayername`)
-    REFERENCES `mydb`.`Character` (`char_playername`)
+    REFERENCES `web`.`Character` (`char_playername`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`InventAndEquip`
+-- Table `web`.`InventAndEquip`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`InventAndEquip` (
+CREATE TABLE IF NOT EXISTS `web`.`InventAndEquip` (
   `equip_charname` VARCHAR(45) NOT NULL,
   `equip_charplayername` VARCHAR(45) NOT NULL,
   `equip_c` VARCHAR(45) NULL,
@@ -235,21 +235,21 @@ CREATE TABLE IF NOT EXISTS `mydb`.`InventAndEquip` (
   INDEX `fk_InventAndEquip_2_idx` (`equip_charplayername` ASC),
   CONSTRAINT `fk_InventAndEquip_1`
     FOREIGN KEY (`equip_charname`)
-    REFERENCES `mydb`.`Character` (`char_name`)
+    REFERENCES `web`.`Character` (`char_name`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_InventAndEquip_2`
     FOREIGN KEY (`equip_charplayername`)
-    REFERENCES `mydb`.`Character` (`char_playername`)
+    REFERENCES `web`.`Character` (`char_playername`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Status`
+-- Table `web`.`Status`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Status` (
+CREATE TABLE IF NOT EXISTS `web`.`Status` (
   `status_charplayername` VARCHAR(45) NOT NULL,
   `status_charname` VARCHAR(45) NOT NULL,
   `status_currenthitpoints` INT NULL,
@@ -263,12 +263,12 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Status` (
   INDEX `fk_Status_1_idx` (`status_charname` ASC),
   CONSTRAINT `fk_Status_1`
     FOREIGN KEY (`status_charname`)
-    REFERENCES `mydb`.`Character` (`char_name`)
+    REFERENCES `web`.`Character` (`char_name`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Status_2`
     FOREIGN KEY (`status_charplayername`)
-    REFERENCES `mydb`.`Character` (`char_playername`)
+    REFERENCES `web`.`Character` (`char_playername`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;

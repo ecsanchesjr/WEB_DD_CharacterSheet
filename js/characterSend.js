@@ -82,7 +82,6 @@ function getEquipInfos() {
 
 function getJson() {
     var json = {
-        tag: 0,
         charName: get("input_charNome"),
         charLevel: get("input_charLevel"),
         charRace: get("input_charRace"),

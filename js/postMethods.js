@@ -1,22 +1,20 @@
 function loginPost() {
     $.post("controller/loginController.php",
         {
-            login: $("#input_login").val(),//document.getElementById("input_login").value,
-            passwd: $("#input_pwd").val()//document.getElementById("input_pwd").value
+            login: $("#input_login").val(),
+            passwd: $("#input_pwd").val()
         },
         function (data, status) {
             console.log(data);
             if (data == "1") {
                 location.href = "view/homePage.html";
-            }else{
-                if (data == "0"){
-                    //document.getElementById("result").innerHTML="User not found!";
-                    console.log("merda");
-                }else{
-                    //document.getElementById("result").innerHTML="Invalid password";
-                    console.log("bosta");
+            } else {
+                if (data == "0") {
+                    document.getElementById("result").innerHTML = "User not found!";
+                } else {
+                    document.getElementById("result").innerHTML = "Invalid password";
                 }
-                //$("#ex").modal();
+                $("#ex").modal();
             }
         });
 }
@@ -37,19 +35,30 @@ function registerPost() {
                 passwd: passwd2
             },
             function (data, status) {
-                console.log(data);
-                if(data=="1"){
-                    document.getElementById("result").innerHTML="Login Success";
-                    $("#ex").modal();
-                    $('#ex').on($.modal.BEFORE_CLOSE, function(event, modal) {
+                var error = "";
+                if (~data.indexOf("1")) {
+                    document.getElementById("result").innerHTML = "Register success.";
+                    $('#ex').on($.modal.BEFORE_CLOSE, function (event, modal) {
                         window.location.href = "../index.html";
                     });
-                }        
+                } else {
+                    if (~data.indexOf("2")) {
+                        error += "User already exists!\n ";
+                    }
+                    if (~data.indexOf("3")) {
+                        error += "Email already exists!\n ";
+                    }
+                    if (~data.indexOf("0")) {
+                        error += "FAILED!";
+                    }
+                    document.getElementById("result").innerHTML = error;
+                }
+                $("#ex").modal();
             });
-    } else {
-        document.getElementById("result").innerHTML="Passwords not match!";
-        $('#ex').modal();
-        $("#input_pwd1").css('background-color','#FFDBDB');
-        $("#input_pwd2").css('background-color','#FFDBDB');
-    }
+} else {
+    document.getElementById("result").innerHTML = "Passwords not match!";
+    $('#ex').modal();
+    $("#input_pwd1").css('background-color', '#FFDBDB');
+    $("#input_pwd2").css('background-color', '#FFDBDB');
+}
 }

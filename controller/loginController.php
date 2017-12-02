@@ -9,7 +9,7 @@
 
         $result = $user->validateUser();
         
-        if($result==0){
+        if(empty($result)){
             echo "0";
         }else{
             if($result[0]["player_pwd"] == $user->getPassword()){

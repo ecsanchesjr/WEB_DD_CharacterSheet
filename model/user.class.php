@@ -24,20 +24,6 @@ class User{
         return ($this->email);
     }
 
-    public function createUser(){
-
-        require_once("DBCon.php");
-
-        $db = startCon();
-        $query = $db->prepare("INSERT INTO `web`.`Player` (`player_login`, `player_email`, `player_pwd`) VALUES (:login, :email, :pass);");
-
-        $query->bindParam(":login", $this->username);
-        $query->bindParam(":email", $this->email);
-        $query->bindParam(":pass", $this->password);
-
-        return($query->execute());
-    }
-
     public function validateUser(){
 
         require_once("DBCon.php");
@@ -51,6 +37,44 @@ class User{
         return($query->fetchAll());
     }
 
+    public function createUser(){
+        
+        require_once("DBCon.php");
+        
+        $db = startCon();
+        $query = $db->prepare("INSERT INTO `web`.`Player` (`player_login`, `player_email`, `player_pwd`) VALUES (:login, :email, :pass);");
+        
+        $query->bindParam(":login", $this->username);
+        $query->bindParam(":email", $this->email);
+        $query->bindParam(":pass", $this->password);
+        
+        return($query->execute());
+    }
+    
+    
+    public function uniqueUser(){
+        require_once("DBCon.php");
+
+        $db = startCon();
+        $query = $db->prepare("SELECT * FROM `web`.`Player` WHERE `player_login` = :login;");
+        $query->bindParam(":login", $this->username);
+
+        $query->execute();
+
+        return($query->rowCount()==0);
+    }
+
+    public function uniqueEmail(){
+        require_once("DBCon.php");
+
+        $db = startCon();
+        $query = $db->prepare("SELECT * FROM `web`.`Player` WHERE `player_email`=:email;");
+        $query->bindParam(":email", $this->email);
+
+        $query->execute();
+
+        return($query->rowCount()==0);
+    }
 }
 
 ?>

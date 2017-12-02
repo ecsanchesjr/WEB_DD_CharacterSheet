@@ -8,7 +8,19 @@
         $user->setEmail($_POST["email"]);
         $user->setPassword($_POST["passwd"]);
 
-        echo $user->createUser();
+        $ctrl=true;
+
+        if(!$user->uniqueUser()){
+            echo "2";
+            $ctrl=false;
+        }
+        if(!$user->uniqueEmail()){
+            echo "3";
+            $ctrl=false;
+        }
+        if($ctrl){
+            echo $user->createUser();
+        }
     }else{
         echo "WTF";
     }

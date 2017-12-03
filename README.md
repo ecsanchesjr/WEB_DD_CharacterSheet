@@ -26,3 +26,20 @@ O projeto possui capacidade de responsividade em três telas de tamanhos diferen
 * 640 pixels
 
 # EM ANDAMENTO
+
+
+# TO DO LIST
+
+Char Page
+- Validade unicidade do nome do personagem para aquele usuário
+- [X] Verificação de campos required
+- Update infos
+- Remover perso
+
+AJAX
+
+- Rodar os dados
+
+
+Frescuras 
+- Mudar NAV

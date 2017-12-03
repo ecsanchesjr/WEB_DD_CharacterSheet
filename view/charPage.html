@@ -8,20 +8,35 @@
     <link rel="stylesheet" href="CSS/common.css" type="text/css">
     <link rel="stylesheet" href="CSS/character.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <script src="../js/cookies.js"></script>
     <script src="../js/characterSend.js"></script>
     <script src="../js/character.js"></script>
 
-    <title>Ficha de Personagem</title>
+    <title>Character Sheet</title>
 </head>
 
 <body>
     <nav class="navbar">
         <a onclick="window.location.href='homePage.html'">HomePage</a>
-        <a onclick="submit()">Save Char</a>
+        <a id="save">Save Char</a>
         <a onclick="alert('nada')">Delete</a>
     </nav>
-    <form id="GOD">
+
+    <div id="ex" class="modal">
+        <p>Do you really want to remove?
+            <br>
+        </p>
+        <p id="nameChar"></p>
+        <div class="modal-buttons">
+            <button id="yes">Yes</button>
+            <button id="no">No</button>
+        </div>
+    </div>
+
+    <form id="GOD" onsubmit="submit(); return false;">
+        <button type="submit" id="form-button" style="display:none;"></button>
         <div class="table">
             <!-- Seçao 1 -->
             <div name="div_charInfos1" class="container-border  container container-0 row">

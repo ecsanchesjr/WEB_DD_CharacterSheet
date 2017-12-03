@@ -8,7 +8,12 @@
     <link rel="stylesheet" href="CSS/common.css" type="text/css">
     <link rel="stylesheet" href="CSS/home.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <script src="../js/postMethods.js"></script>
+    <script src="../js/homePage.js"></script>
+    <script src="../js/cookies.js"></script>
+
     <title>Página de Jogador</title>
 </head>
 
@@ -17,16 +22,28 @@
 
         <label class="title-page-label">Characters</label>
         <div class="grid-top">
-            <button onclick="window.location.href = 'charPage.html'">Create Character</button>
+            <button id="newChar">Create Character</button>
             <button onclick="logoutPost();">Logout</button>
         </div>
         <br>
 
-        <div class="grid">
+        <div id="main-div" class="grid">
+            <!-- Characters will be added in here -->
+            <!-- 
             <label>Sir Kapriel's Gay</label>
             <label>Lv 24</label>
             <button onclick="window.location.href = 'charPage.html'">View</button>
-            <button onclick="alert('AINDA NÃO FAZ NADA, CARALHO')">Delete</button>
+            <button onclick="alert('AINDA NÃO FAZ NADA, CARALHO')">Delete</button> -->
+        </div>
+    </div>
+    <div id="ex" class="modal">
+        <p>You desire to remove
+            <br>
+        </p>
+        <p id="nameChar"></p>
+        <div class="modal-buttons">
+            <button id="yes">Yes</button>
+            <button id="no">No</button>
         </div>
     </div>
 </body>

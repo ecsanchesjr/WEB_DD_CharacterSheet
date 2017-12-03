@@ -1,3 +1,4 @@
+
 function loginPost() {
     $.post("controller/loginController.php",
         {
@@ -6,8 +7,8 @@ function loginPost() {
             passwd: $("#input_pwd").val()
         },
         function (data, status) {
-            console.log(data);
             if (~data.indexOf("1")) {
+                setCookie("userName", $("#input_login").val(), 5);
                 location.href = "view/homePage.html";
             } else {
                 if (~data.indexOf("0")) {
@@ -26,8 +27,11 @@ function logoutPost() {
         tag: 'logoff'
     },
     function (data,status) {
-        if (status == "success")
+        if (status == "success"){
+            setCookie("load", "false", 5);
+            setCookie("userName", "", 5);
             window.location.href = "../index.html";
+        }
     });
 }
 

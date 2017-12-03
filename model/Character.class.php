@@ -69,6 +69,21 @@ class Character{
 
         return($query->execute());
     }
+
+    public function getAllCharsPlayer($login){
+        $con = startCon();
+
+        $query = $con->prepare("SELECT char_name, char_level FROM `web`.`Character` WHERE `char_playername`=:name;");
+        $query->bindParam(":name", $login);
+
+        if($query->execute()){
+            return($query);
+        }else{
+            return(null);
+        }
+
+        
+    }
 }
 
 /* class Character{

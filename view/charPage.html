@@ -22,21 +22,11 @@
         <a onclick="window.location.href='homePage.html'">HomePage</a>
         <a id="save">Save Char</a>
         <a onclick="alert('nada')">Delete</a>
+        <a onclick="rollDice(); return false;">Roll Dice</a>
     </nav>
 
-    <div id="ex" class="modal">
-        <p>Do you really want to remove?
-            <br>
-        </p>
-        <p id="nameChar"></p>
-        <div class="modal-buttons">
-            <button id="yes">Yes</button>
-            <button id="no">No</button>
-        </div>
-    </div>
-
-    <form id="GOD" onsubmit="submit(); return false;">
-        <button type="submit" id="form-button" style="display:none;"></button>
+    <form id="form-char" onsubmit="sendInfos(); return false;">
+        <button type="submit" id="form-send" style="display: none;">...</button>
         <div class="table">
             <!-- Seçao 1 -->
             <div name="div_charInfos1" class="container-border  container container-0 row">

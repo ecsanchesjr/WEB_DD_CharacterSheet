@@ -2,22 +2,29 @@
     require_once("../model/Character.class.php");
     session_start();
 
-    //if(isset($_POST["charData"]) && isset($_POST["actionTag"])){
+    $tag = $_POST["actionTag"];
+
+    if(isset($_POST["charData"])){
         $data = $_POST["charData"];
-        $tag = $_POST["actionTag"];
-      //  unset($_POST);
-    //}
-    
-    $char = new Character;
+        unset($_POST);
+    }
 
     switch($tag){
         case "send":
+            $char = new Character;
             getCharInfos($char, $data);
             $char->addNewChar();
+            print_r($char);
+        break;
+
+        case "delete":
+        break;
+
+        case "roll":
+            $values = array("str"=>rand(3,18), "dex"=>rand(3,18), "con"=>rand(3,18), "int"=>rand(3,18), "wis"=>rand(3,18), "cha"=>rand(3,18));
+            echo json_encode($values);
         break;
     }
-
-    print_r($char);
 
 
     function getCharInfos($char, $data){

@@ -9,7 +9,7 @@ function get(name) {
     return (element.value);
 }
 
-function submit() {
+function sendInfos() {
     $.post("../controller/characterController.php",
         {
             actionTag: 'send',

@@ -9,25 +9,25 @@ function loadPage() {
             actionTag: 'load'
         },
         function (data, status) {
-            $("#main-div").append(data);
+            $("#main-div").html(data);
 
             $("button").click(function (event) {
                 var id = event.target.id;
                 if (~id.indexOf("view!")) {
                     id = id.replace("view!", "");
                     openCharPage(id);
-                }else if(~id.indexOf("delete!")){
+                } else if (~id.indexOf("delete!")) {
                     id = id.replace("delete!", "");
                     $("#nameChar").html(id);
                     $("#ex").modal({
                         showClose: false
                     });
-                }else if(~id.indexOf("newChar")){
+                } else if (~id.indexOf("newChar")) {
                     openCreateCharPage();
-                }else if(~id.indexOf("yes")){
-                    deleteChar($("#name").html());
+                } else if (~id.indexOf("yes")) {
+                    deleteChar($("#nameChar").html());
                     $.modal.close();
-                }else if(~id.indexOf("no")){
+                } else if (~id.indexOf("no")) {
                     $.modal.close();
                 }
             });
@@ -51,7 +51,6 @@ function deleteChar(name) {
             charName: name
         },
         function (data, status) {
-            console.log(data);
             loadPage();
         });
 }

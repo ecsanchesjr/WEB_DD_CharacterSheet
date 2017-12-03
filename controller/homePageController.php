@@ -14,6 +14,14 @@
                 addEntry($row['char_name'], $row['char_level']);
             }
         break;
+
+        case 'delete':
+            
+            $char = new Character();
+            
+            echo $char->deleteChar($_POST['charName'], $_SESSION['userLogin']);
+
+        break;
     }
 
     function addEntry($name, $level){

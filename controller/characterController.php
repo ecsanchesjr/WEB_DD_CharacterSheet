@@ -13,19 +13,12 @@
     switch($tag){
         case "send":
             getCharInfos($char, $data);
-            print_r($char);
+            $char->addNewChar();
         break;
     }
 
-/*     // debug
-    foreach($data as $name => $value){
-        echo $name;
-        if($name == "featAndTraits"){
-            print_r($value);
-            echo "\n\n\n";
-            print_r(explode("|", $value, -1));
-        }
-    }  */
+    print_r($char);
+
 
     function getCharInfos($char, $data){
         $char->charName = $data['charName'];
@@ -59,9 +52,11 @@
 
         $aux = 0;
         $char->attacks = array();
-        foreach($data['atkAndSpells'] as $key => $value){
-            $char->attacks[$aux] = new AtkAndSpell($value['name'], $value['attack'], $value['damage'], $value['range'], $value['ammo'], $value['used']);
-            $aux++;
+        if(isset($data['atkAndSpells'])){
+            foreach($data['atkAndSpells'] as $key => $value){
+                $char->attacks[$aux] = new AtkAndSpell($value['name'], $value['attack'], $value['damage'], $value['range'], $value['ammo'], $value['used']);
+                $aux++;
+            }
         }
         unset($aux);
 

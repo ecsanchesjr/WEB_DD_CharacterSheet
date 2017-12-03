@@ -3,7 +3,7 @@
 class SavingThrows{
     public $strenght; 
     public $dexterity; 
-    public $constituintion; 
+    public $constituition; 
     public $intelligence;
     public $wisdom; 
     public $charisma;
@@ -11,7 +11,7 @@ class SavingThrows{
     public function __construct($str, $dex, $con, $int, $wis, $cha){
         $this->strenght = $str;
         $this->dexterity = $dex;
-        $this->constituintion = $con;
+        $this->constituition = $con;
         $this->intelligence = $int;
         $this->wisdom = $wis;
         $this->charisma = $cha;

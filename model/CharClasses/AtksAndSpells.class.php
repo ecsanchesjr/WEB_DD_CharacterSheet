@@ -2,7 +2,7 @@
 
 class AtkAndSpell{
     public $name;
-    public $atack;
+    public $attack;
     public $damage;
     public $range;
     public $ammo;

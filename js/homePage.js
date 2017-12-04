@@ -1,3 +1,4 @@
+verifySession();
 
 $(document).ready(function () {
     loadPage();

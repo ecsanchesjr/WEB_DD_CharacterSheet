@@ -310,14 +310,11 @@ class Character{
 
         if($query->execute()){
             while($row = $query->fetch()){
-
                 $this->profBonus = $row['att_proficiencybonus'];
                 $this->inspiration = $row['att_inspiration'];
                 $this->passivePerc = $row['att_passiveperception'];
 
                 $this->attribs = new Attributes($row['att_strength'], $row['att_dexterity'], $row['att_constituition'], $row['att_intelligence'], $row['att_wisdom'], $row['att_charisma']);
-
-                print_r($this->attribs);
             }
         }else{
             echo "attributes";
@@ -334,10 +331,7 @@ class Character{
 
         if($query->execute()){
             while($row = $query->fetch()){
-
                 $this->savingThrows = new SavingThrows($row['sv_strength'], $row['sv_dexterity'], $row['sv_constituition'], $row['sv_intelligence'], $row['sv_wisdom'], $row['sv_charisma']);
-
-                print_r($this->savingThrows);
             }
         }else{
             echo "saving throws";
@@ -354,10 +348,7 @@ class Character{
 
         if($query->execute()){
             while($row = $query->fetch()){
-
                 $this->skills = new Skill($row['skills_acrobatics'], $row['skills_animalhand'], $row['skills_arcana'], $row['skills_athletics'], $row['skills_decepticon'], $row['skills_history'], $row['skills_insight'], $row['skills_intimidation'], $row['skills_investigation'], $row['skills_medicine'], $row['skills_nature'], $row['skills_percepticon'], $row['skills_performance'], $row['skills_persuasion'], $row['skills_religion'], $row['skills_sleightofhand'], $row['skills_stealth'], $row['skills_survival']);
-                
-                print_r($this->skills);
             }
         }else{
             echo "skills";
@@ -374,10 +365,7 @@ class Character{
 
         if($query->execute()){
             while($row = $query->fetch()){
-
                 $this->status = new Status($row['status_armorclass'], $row['status_maxhp'], $row['status_temphp'], $row['status_currenthitpoints'], $row['status_initiate'], $row['status_speed'], $row['status_vision']);
-            
-                print_r($this->status);
             }
         }else{
             echo "Status";
@@ -396,12 +384,9 @@ class Character{
             $aux = 0;
             $this->attacks = array();
             while($row = $query->fetch()){
-
                 $this->attacks[$aux] = new AtkAndSpell($row['attack_name'], $row['attack_attack'], $row['attack_damage'], $row['attack_range'], $row['attack_ammo'], $row['attack_used']);
                 $aux++;
             }
-
-            print_r($this->attacks);
         }else{
             echo "atks";
             die();
@@ -417,8 +402,7 @@ class Character{
 
         if($query->execute()){
             while($row = $query->fetch()){
-
-                $this->featAndTrats = $row['features_information'];
+                $this->featAndTraits = $row['features_information'];
             }
         }else{
             echo "feats";
@@ -435,7 +419,6 @@ class Character{
 
         if($query->execute()){
             while($row = $query->fetch()){
-
                 $this->profAndLang = $row['profandlang_information'];
             }
         }else{
@@ -453,10 +436,7 @@ class Character{
 
         if($query->execute()){
             while($row = $query->fetch()){
-
                 $this->equips = new Equipment($row['equip_information'], $row['equip_c'], $row['equip_s'], $row['equip_e'], $row['equip_g'], $row['equip_p']);
-            
-                print_r($this->equips);
             }
         }else{
             echo "equips";

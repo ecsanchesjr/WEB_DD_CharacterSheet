@@ -22,7 +22,7 @@
         break;
 
         case "roll":
-            $values = array("str"=>rand(3,18), "dex"=>rand(3,18), "con"=>rand(3,18), "int"=>rand(3,18), "wis"=>rand(3,18), "cha"=>rand(3,18));
+            $values = array("strenght"=>rand(3,18), "dexterity"=>rand(3,18), "constituition"=>rand(3,18), "intelligence"=>rand(3,18), "wisdom"=>rand(3,18), "charisma"=>rand(3,18));
             echo json_encode($values);
         break;
 
@@ -31,7 +31,7 @@
             $char->charPlayer = $_SESSION['userLogin'];
             $char->charName = $_POST['charName'];
             $char->getCharInfos();
-
+            echo json_encode($char);
         break;
     }
 

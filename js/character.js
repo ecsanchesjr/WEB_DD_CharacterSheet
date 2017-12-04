@@ -1,3 +1,4 @@
+verifySession();
 
 $(document).ready(function () {
     if (getCookie("load") == "false") {
@@ -10,7 +11,7 @@ $(document).ready(function () {
                 charName: getCookie("charName")
             },
             function (data, status) {
-                console.log(data);
+                setAllData(JSON.parse(data));
             });
     }
 
@@ -25,7 +26,6 @@ function rollDice() {
             actionTag: "roll"
         },
         function (data, status) {
-            var values = JSON.parse(data);
-            console.log(values);
+            setAttributes(JSON.parse(data));
         });
 }

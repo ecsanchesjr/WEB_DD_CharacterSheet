@@ -13,6 +13,7 @@
     <script src="../js/cookies.js"></script>
     <script src="../js/characterSend.js"></script>
     <script src="../js/character.js"></script>
+    <script src="../js/characterLoad.js"></script>
 
     <title>Character Sheet</title>
 </head>
@@ -50,12 +51,12 @@
             <div name="div_charInfos2" class="container-border container container-1 row">
                 <div class="subcontainer subcontainer-2">
                     <div class="div-char-infos-section1">
-                        <input type="text" name="input_charRace" required>
+                        <input class="basic-infos-inputs" type="text" name="input_charRace" required>
                         <br>
                         <label class="labels-char-infos-1">Race & Class</label>
                     </div>
                     <div class="div-char-infos-section1-bot">
-                        <input type="number" name="input_charExp" required>
+                        <input class="basic-infos-inputs" type="number" name="input_charExp" required>
                         <br>
                         <label class="labels-char-infos-1">Experience Points</label>
                     </div>
@@ -63,12 +64,12 @@
 
                 <div class="subcontainer subcontainer-2">
                     <div class="div-char-infos-section1">
-                        <input type="text" name="input_charBack" required>
+                        <input class="basic-infos-inputs" type="text" name="input_charBack" required>
                         <br>
                         <label class="labels-char-infos-1">Background</label>
                     </div>
                     <div class="div-char-infos-section1-bot">
-                        <input type="text" name="input_charAlign" required>
+                        <input class="basic-infos-inputs" type="text" name="input_charAlign" required>
                         <br>
                         <label class="labels-char-infos-1">Alignment</label>
                     </div>
@@ -76,12 +77,12 @@
 
                 <div class="subcontainer subcontainer-2">
                     <div class="div-char-infos-section1">
-                        <input type="text" name="input_charPlayer" required>
+                        <input class="basic-infos-inputs" type="text" name="input_charPlayer" required>
                         <br>
                         <label class="labels-char-infos-1">Player Name</label>
                     </div>
                     <div class="div-char-infos-section1-bot">
-                        <input type="text" name="input_charGroup" required>
+                        <input class="basic-infos-inputs" type="text" name="input_charGroup" required>
                         <br>
                         <label class="labels-char-infos-1">Adventuring Group</label>
                     </div>
@@ -691,7 +692,21 @@
                             </td>
                             <td>
                                 <div>
+                                    <input type="text" name="input_featAndTraits21">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>
                                     <input type="text" name="input_featAndTraits12">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" name="input_featAndTraits22">
                                     <label name="statusCol_Str"></label>
                                 </div>
                             </td>
@@ -705,34 +720,6 @@
                             </td>
                             <td>
                                 <div>
-                                    <input type="text" name="input_featAndTraits14">
-                                    <label name="statusCol_Str"></label>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div>
-                                    <input type="text" name="input_featAndTraits15">
-                                    <label name="statusCol_Str"></label>
-                                </div>
-                            </td>
-                            <td>
-                                <div>
-                                    <input type="text" name="input_featAndTraits21">
-                                    <label name="statusCol_Str"></label>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div>
-                                    <input type="text" name="input_featAndTraits22">
-                                    <label name="statusCol_Str"></label>
-                                </div>
-                            </td>
-                            <td>
-                                <div>
                                     <input type="text" name="input_featAndTraits23">
                                     <label name="statusCol_Str"></label>
                                 </div>
@@ -741,7 +728,21 @@
                         <tr>
                             <td>
                                 <div>
+                                    <input type="text" name="input_featAndTraits14">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
                                     <input type="text" name="input_featAndTraits24">
+                                    <label name="statusCol_Str"></label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>
+                                    <input type="text" name="input_featAndTraits15">
                                     <label name="statusCol_Str"></label>
                                 </div>
                             </td>

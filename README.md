@@ -38,7 +38,7 @@ Char Page
 
 AJAX
 
-- Rodar os dados
+- [X] Rodar os dados
 
 
 Frescuras 

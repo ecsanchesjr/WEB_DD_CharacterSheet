@@ -7,7 +7,7 @@
     switch($_POST['actionTag']){
         case 'load':
             $char = new Character();
-
+            
             $result = $char->getAllCharsPlayer($_SESSION['userLogin']);
             
             while($row = $result->fetch()){

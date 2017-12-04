@@ -46,6 +46,20 @@ class Character{
     // Obj Equipment
     public $equips;
 
+    public function getAllCharsPlayer($login){
+        $con = startCon();
+
+        $query = $con->prepare("SELECT char_name, char_level FROM `web`.`Character` WHERE `char_playername`=:name;");
+        $query->bindParam(":name", $login);
+
+        if($query->execute()){
+            return($query);
+        }else{
+            return(null);
+        }
+    }
+
+    // ADD NEW CHAR METHODS
     public function addNewChar(){
         $con = startCon();
         
@@ -97,19 +111,6 @@ class Character{
         $query->bindParam(":group", $this->charGroup);
 
         return($query->execute());
-    }
-
-    public function getAllCharsPlayer($login){
-        $con = startCon();
-
-        $query = $con->prepare("SELECT char_name, char_level FROM `web`.`Character` WHERE `char_playername`=:name;");
-        $query->bindParam(":name", $login);
-
-        if($query->execute()){
-            return($query);
-        }else{
-            return(null);
-        }
     }
 
     public function deleteChar($name, $user){
@@ -260,75 +261,208 @@ class Character{
 
         return($query->execute());
     }
+
+    // GET CHAR INFOS
+    public function getCharInfos(){
+
+        $con = startCon();
+
+        $this->getBasicInfos($con);
+        $this->getAttributesInfos($con);
+        $this->getSavingThrows($con);
+        $this->getSkills($con);
+        $this->getStatus($con);
+        $this->getAttacks($con);
+        $this->getFeatAndTraits($con);
+        $this->getProfAndLang($con);
+        $this->getEquips($con);
+    }
+
+    private function getBasicInfos($con){
+
+        $query = $con->prepare("SELECT `char_level`, `char_class`, `char_background`, `char_exppoints`, `char_alignment`, `char_advgroup` FROM `web`.`Character` WHERE `char_playername`=:player AND `char_name`=:name");
+
+        $query->bindParam(":player", $this->charPlayer);
+        $query->bindParam(":name", $this->charName);
+
+        if($query->execute()){
+            while($row = $query->fetch()){
+
+                $this->charLevel = $row['char_level'];
+                $this->charRace = $row['char_class'];
+                $this->charBack = $row['char_background'];
+                $this->charExp = $row['char_exppoints'];
+                $this->charAlign = $row['char_alignment'];
+                $this->charGroup = $row['char_advgroup'];
+            }
+        }else{
+            echo "basic";
+            die();
+        }
+    }
+
+    private function getAttributesInfos($con){
+
+        $query = $con->prepare("SELECT `att_strength`, `att_dexterity`, `att_constituition`, `att_intelligence`, `att_wisdom`, `att_charisma`, `att_inspiration`, `att_proficiencybonus`, `att_passiveperception` FROM `web`.`Attributes` WHERE  `att_charname`=:name AND `att_charplayername`=:player");
+
+        $query->bindParam(":player", $this->charPlayer);
+        $query->bindParam(":name", $this->charName);
+
+        if($query->execute()){
+            while($row = $query->fetch()){
+
+                $this->profBonus = $row['att_proficiencybonus'];
+                $this->inspiration = $row['att_inspiration'];
+                $this->passivePerc = $row['att_passiveperception'];
+
+                $this->attribs = new Attributes($row['att_strength'], $row['att_dexterity'], $row['att_constituition'], $row['att_intelligence'], $row['att_wisdom'], $row['att_charisma']);
+
+                print_r($this->attribs);
+            }
+        }else{
+            echo "attributes";
+            die();
+        }
+    }
+
+    private function getSavingThrows($con){
+
+        $query = $con->prepare("SELECT `sv_strength`, `sv_dexterity`, `sv_constituition`, `sv_intelligence`, `sv_wisdom`, `sv_charisma` FROM `web`.`SavingThrows` WHERE `sv_charname`=:name AND `sv_charplayername`=:player");
+
+        $query->bindParam(":player", $this->charPlayer);
+        $query->bindParam(":name", $this->charName);
+
+        if($query->execute()){
+            while($row = $query->fetch()){
+
+                $this->savingThrows = new SavingThrows($row['sv_strength'], $row['sv_dexterity'], $row['sv_constituition'], $row['sv_intelligence'], $row['sv_wisdom'], $row['sv_charisma']);
+
+                print_r($this->savingThrows);
+            }
+        }else{
+            echo "saving throws";
+            die();
+        }
+    }
+
+    private function getSkills($con){
+        
+        $query = $con->prepare("SELECT `skills_acrobatics`, `skills_animalhand`, `skills_arcana`, `skills_athletics`, `skills_decepticon`, `skills_history`, `skills_insight`, `skills_intimidation`, `skills_investigation`, `skills_medicine`, `skills_nature`, `skills_percepticon`, `skills_performance`, `skills_persuasion`, `skills_religion`, `skills_sleightofhand`, `skills_stealth`, `skills_survival` FROM `web`.`Skills` WHERE `skills_charname`=:name AND `skills_charplayername`=:player");
+
+        $query->bindParam(":player", $this->charPlayer);
+        $query->bindParam(":name", $this->charName);
+
+        if($query->execute()){
+            while($row = $query->fetch()){
+
+                $this->skills = new Skill($row['skills_acrobatics'], $row['skills_animalhand'], $row['skills_arcana'], $row['skills_athletics'], $row['skills_decepticon'], $row['skills_history'], $row['skills_insight'], $row['skills_intimidation'], $row['skills_investigation'], $row['skills_medicine'], $row['skills_nature'], $row['skills_percepticon'], $row['skills_performance'], $row['skills_persuasion'], $row['skills_religion'], $row['skills_sleightofhand'], $row['skills_stealth'], $row['skills_survival']);
+                
+                print_r($this->skills);
+            }
+        }else{
+            echo "skills";
+            die();
+        }
+    }
+
+    private function getStatus($con){
+
+        $query = $con->prepare("SELECT `status_currenthitpoints`, `status_armorclass`, `status_maxhp`, `status_temphp`, `status_initiate`, `status_speed`, `status_vision` FROM `web`.`Status` WHERE `status_charname`=:name AND `status_charplayername`=:player");
+
+        $query->bindParam(":player", $this->charPlayer);
+        $query->bindParam(":name", $this->charName);
+
+        if($query->execute()){
+            while($row = $query->fetch()){
+
+                $this->status = new Status($row['status_armorclass'], $row['status_maxhp'], $row['status_temphp'], $row['status_currenthitpoints'], $row['status_initiate'], $row['status_speed'], $row['status_vision']);
+            
+                print_r($this->status);
+            }
+        }else{
+            echo "Status";
+            die();
+        }
+    }
+
+    private function getAttacks($con){
+
+        $query = $con->prepare("SELECT `attack_name`, `attack_attack`, `attack_damage`, `attack_range`, `attack_ammo`, `attack_used` FROM `web`.`Attacks` WHERE `attack_charname`=:name AND `attack_charplayername`=:player");
+
+        $query->bindParam(":player", $this->charPlayer);
+        $query->bindParam(":name", $this->charName);
+
+        if($query->execute()){
+            $aux = 0;
+            $this->attacks = array();
+            while($row = $query->fetch()){
+
+                $this->attacks[$aux] = new AtkAndSpell($row['attack_name'], $row['attack_attack'], $row['attack_damage'], $row['attack_range'], $row['attack_ammo'], $row['attack_used']);
+                $aux++;
+            }
+
+            print_r($this->attacks);
+        }else{
+            echo "atks";
+            die();
+        }
+    }
+
+    private function getFeatAndTraits($con){
+
+        $query = $con->prepare("SELECT `features_information` FROM `web`.`Features` WHERE `features_charname`=:name AND `features_charplayername`=:player");
+
+        $query->bindParam(":player", $this->charPlayer);
+        $query->bindParam(":name", $this->charName);
+
+        if($query->execute()){
+            while($row = $query->fetch()){
+
+                $this->featAndTrats = $row['features_information'];
+            }
+        }else{
+            echo "feats";
+            die();
+        }
+    }
+
+    private function getProfAndLang($con){
+
+        $query = $con->prepare("SELECT `profandlang_information` FROM `web`.`ProfAndLang` WHERE `profandlang_charname`=:name AND `profandlang_charplayername`=:player");
+
+        $query->bindParam(":player", $this->charPlayer);
+        $query->bindParam(":name", $this->charName);
+
+        if($query->execute()){
+            while($row = $query->fetch()){
+
+                $this->profAndLang = $row['profandlang_information'];
+            }
+        }else{
+            echo "profandlang";
+            die();
+        }
+    }
+
+    private function getEquips($con){
+
+        $query = $con->prepare("SELECT `equip_c`, `equip_s`, `equip_e`, `equip_g`, `equip_p`, `equip_information` FROM `web`.`InventAndEquip` WHERE `equip_charname`=:name AND `equip_charplayername`=:player");
+
+        $query->bindParam(":player", $this->charPlayer);
+        $query->bindParam(":name", $this->charName);
+
+        if($query->execute()){
+            while($row = $query->fetch()){
+
+                $this->equips = new Equipment($row['equip_information'], $row['equip_c'], $row['equip_s'], $row['equip_e'], $row['equip_g'], $row['equip_p']);
+            
+                print_r($this->equips);
+            }
+        }else{
+            echo "equips";
+            die();
+        }
+    }
+
 }
-
-/* class Character{
-    public $charName;
-    public $charLevel;
-    public $charRace;
-    public $charExp; 
-    public $charBack;
-    public $charAlign; 
-    public $charPlayer; 
-    public $charGroup; 
-    //attributes
-    public $atribStr; 
-    public $atribDex; 
-    public $atribCon; 
-    public $atribInt; 
-    public $atribWis; 
-    public $atribCha; 
-    //??
-    public $inspiration; 
-    public $profBonus; 
-    public $passivePerc; 
-    //saving throws
-    public $savingStr; 
-    public $savingDex; 
-    public $savingCon; 
-    public $savingInt;
-    public $savingWis; 
-    public $savingCha; 
-    //skills
-    public $skillAcrobatics; 
-    public $skillAnimalHand; 
-    public $skillArcana; 
-    public $skillAthletics; 
-    public $skillDeception; 
-    public $skillHistory; 
-    public $skillInsight; 
-    public $skillIntimidation; 
-    public $skillInvestigation; 
-    public $skillMedicine; 
-    public $skillNature; 
-    public $skillPerception; 
-    public $skillPerformance; 
-    public $skillPersuasion; 
-    public $skillReligion; 
-    public $skillSleightHand; 
-    public $skillStealth; 
-    public $skillSurvival; 
-    //Status
-    public $statusArmor; 
-    public $statusMaxHp; 
-    public $statusTempHp; 
-    public $statusCurrentHp; 
-    public $statusInitiate; 
-    public $statusSpeed; 
-    public $statusVision; 
-    // Attacks And SpellCasting
-    public $atkAndSpells; 
-    // Features and Traits
-    public $featAndTraits; 
-    // Proficiencies and Languages
-    public $profAndLang; 
-    // Equipament
-    public $equipamentInfo; 
-    public $equipC; 
-    public $equipS; 
-    public $equipE; 
-    public $equipG; 
-    public $equipP; 
-} */
-
 ?>

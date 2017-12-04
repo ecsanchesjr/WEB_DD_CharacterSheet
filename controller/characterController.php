@@ -18,11 +18,20 @@
         break;
 
         case "delete":
+
         break;
 
         case "roll":
             $values = array("str"=>rand(3,18), "dex"=>rand(3,18), "con"=>rand(3,18), "int"=>rand(3,18), "wis"=>rand(3,18), "cha"=>rand(3,18));
             echo json_encode($values);
+        break;
+
+        case "load":
+            $char = new Character;
+            $char->charPlayer = $_SESSION['userLogin'];
+            $char->charName = $_POST['charName'];
+            $char->getCharInfos();
+
         break;
     }
 
@@ -74,4 +83,5 @@
         $char->equips = new Equipment($aux['info'], $aux['c'], $aux['s'], $aux['e'], $aux['g'], $aux['p']);
         unset($aux);
     }
+
 ?>

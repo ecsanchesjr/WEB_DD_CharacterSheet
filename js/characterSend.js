@@ -10,7 +10,7 @@ function get(name) {
 }
 
 function sendInfos() {
-    if (getCookie("load") == "true") {
+    if (getCookie("load") == "true" || getCookie("update") == "true") {
         $.post("../controller/characterController.php",
             {
                 actionTag: 'update',
@@ -42,8 +42,11 @@ function sendInfos() {
                 charName: get("input_charNome"),
                 charData: getJson()
             }, function (data, status) {
-                setCookie("update", "true", 5);
                 if(data == "ok"){
+                    setCookie("update", "true", 5);
+                    setCookie("load", "true", 5);
+                    toggleButtons("update");
+                    toggleFields(true);
                     $("#result").html("Character created!");
                     $("#confirm").modal({
                         showClose: false
@@ -54,14 +57,14 @@ function sendInfos() {
                         showClose: false
                     });
                 }else if(~data.indexOf("atks")){
+                    setCookie("load", "true", 5);
+                    setCookie("charName", get("input_charNome"), 5);
+                    clearFields();
                     $("#result").html("Duplicated atacks names not saved!");
                     $("#confirm").modal({
                         showClose: false
                     });
                     $('#confirm').on($.modal.BEFORE_CLOSE, function (event, modal) {
-                        setCookie("load", "true", 5);
-                        setCookie("charName", get("input_charNome"), 5);
-                        clearFields();
                         window.location.reload();
                     });
                 }else{

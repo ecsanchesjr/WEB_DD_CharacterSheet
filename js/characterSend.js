@@ -18,7 +18,6 @@ function sendInfos() {
                 charNewName: get("input_charNome"),
                 charData: getJson()
             }, function (data, status) {
-                console.log(data);
                 if(data == "ok"){
                     $("#result").html("Character updated");
                     $("#confirm").modal({
@@ -43,7 +42,7 @@ function sendInfos() {
                 charName: get("input_charNome"),
                 charData: getJson()
             }, function (data, status) {
-                console.log(data);
+                setCookie("update", "true", 5);
                 if(data == "ok"){
                     $("#result").html("Character created!");
                     $("#confirm").modal({
@@ -53,6 +52,17 @@ function sendInfos() {
                     $("#result").html("Character name already used!");
                     $("#confirm").modal({
                         showClose: false
+                    });
+                }else if(~data.indexOf("atks")){
+                    $("#result").html("Duplicated atacks names not saved!");
+                    $("#confirm").modal({
+                        showClose: false
+                    });
+                    $('#confirm').on($.modal.BEFORE_CLOSE, function (event, modal) {
+                        setCookie("load", "true", 5);
+                        setCookie("charName", get("input_charNome"), 5);
+                        clearFields();
+                        window.location.reload();
                     });
                 }else{
                     $("#result").html("Error ocurred, try to create again!");

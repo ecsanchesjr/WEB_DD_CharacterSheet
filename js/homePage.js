@@ -43,6 +43,7 @@ function openCharPage(name) {
 
 function openCreateCharPage() {
     setCookie("load", "false", 5);
+    setCookie("update", "false", 5);
     window.location.href = "../view/charPage.html";
 }
 

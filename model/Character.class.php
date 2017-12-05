@@ -231,6 +231,10 @@ class Character{
             $query->bindParam(":used", intval($value->used));
             
             $aux = $query->execute();
+
+            if(!$aux){
+                echo "atks";
+            }
         }
         return($aux);
     }

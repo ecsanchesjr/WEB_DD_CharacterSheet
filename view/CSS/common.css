@@ -13,6 +13,10 @@ input[type="number"]{
     box-sizing : border-box;
 }
 
+.modal{
+    text-align: center;
+}
+
 @FONT-FACE{
     font-family: wild;
     src:url("../fonts/fontTheWild.otf");

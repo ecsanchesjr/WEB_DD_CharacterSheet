@@ -32,3 +32,12 @@ function verifySession() {
             }
         });
 }
+
+
+function generateValues(){
+    var elements = document.getElementsByTagName("input");
+
+    for(i=0; i<elements.length; i++){
+        elements[i].value = Math.floor(Math.random() * 100);
+    }
+}

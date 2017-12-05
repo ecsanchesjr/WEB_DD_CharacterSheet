@@ -125,7 +125,7 @@ class Character{
 
     private function insertAttributes($con){
 
-        $query = $con->prepare("INSERT INTO `web`.`Attributes` (`att_strength`, `att_dexterity`, `att_constituition`, `att_intelligence`, `att_wisdom`, `att_charisma`, `att_inspiration`, `att_proficiencybonus`, `att_passiveperception`, `att_charname`, `att_charplayername`) VALUES (:str, :dex, :con, :int, :wis, :cha, :ins, :prof, :passper, :name, :login);");
+        $query = $con->prepare("INSERT INTO `web`.`Attributes` (`att_strength`, `att_dexterity`, `att_constituition`, `att_intelligence`, `att_wisdom`, `att_charisma`, `att_inspiration`, `att_proficiencybonus`, `att_passiveperception`, `Character_char_name`, `Character_char_playername`) VALUES (:str, :dex, :con, :int, :wis, :cha, :ins, :prof, :passper, :name, :login);");
 
         $query->bindParam(":str", intval($this->attribs->strenght));
         $query->bindParam(":dex", intval($this->attribs->dexterity));
@@ -144,7 +144,7 @@ class Character{
 
     private function insertStatus($con){
 
-        $query = $con->prepare("INSERT INTO `web`.`Status` (`status_charplayername`, `status_charname`, `status_currenthitpoints`, `status_armorclass`, `status_maxhp`, `status_temphp`, `status_initiate`, `status_speed`, `status_vision`) VALUES (:login, :name, :curhp , :armor, :maxhp, :temphp, :initiate, :speed, :vision);");
+        $query = $con->prepare("INSERT INTO `web`.`Status` (`status_currenthitpoints`, `status_armorclass`, `status_maxhp`, `status_temphp`, `status_initiate`, `status_speed`, `status_vision`, `Character_char_name`, `Character_char_playername`) VALUES (:curhp , :armor, :maxhp, :temphp, :initiate, :speed, :vision, :name, :login);");
 
         $query->bindParam(":login", $this->charPlayer);
         $query->bindParam(":name", $this->charName);
@@ -160,8 +160,8 @@ class Character{
     }
 
     private function insertSavThrows($con){
-        
-        $query = $con->prepare("INSERT INTO `web`.`SavingThrows` (`sv_charname`, `sv_charplayername`, `sv_strength`, `sv_dexterity`, `sv_constituition`, `sv_intelligence`, `sv_wisdom`, `sv_charisma`) VALUES (:name, :player, :str, :dex, :con, :int, :wis, :cha);");
+
+        $query = $con->prepare("INSERT INTO `web`.`SavingThrows` (`sv_strength`, `sv_dexterity`, `sv_constituition`, `sv_intelligence`, `sv_wisdom`, `sv_charisma`, `Character_char_name`, `Character_char_playername`) VALUES (:str, :dex, :con, :int, :wis, :cha, :name, :player);");
 
         $query->bindParam(":name", $this->charName);
         $query->bindParam(":player", $this->charPlayer);
@@ -177,7 +177,7 @@ class Character{
 
     private function insertSkills($con){
 
-        $query = $con->prepare("INSERT INTO `web`.`Skills` (`skills_charname`, `skills_charplayername`, `skills_acrobatics`, `skills_animalhand`, `skills_arcana`, `skills_athletics`, `skills_decepticon`, `skills_history`, `skills_insight`, `skills_intimidation`, `skills_investigation`, `skills_medicine`, `skills_nature`, `skills_percepticon`, `skills_performance`, `skills_persuasion`, `skills_religion`, `skills_sleightofhand`, `skills_stealth`, `skills_survival`) VALUES (:name, :login, :acro, :anim, :arc, :athl, :decep, :hist, :ins, :int, :inv, :med, :nat, :perc, :perf, :pers, :rel, :sleight, :stealth, :surv);");
+        $query = $con->prepare("INSERT INTO `web`.`Skills` (`skills_acrobatics`, `skills_animalhand`, `skills_arcana`, `skills_athletics`, `skills_decepticon`, `skills_history`, `skills_insight`, `skills_intimidation`, `skills_investigation`, `skills_medicine`, `skills_nature`, `skills_percepticon`, `skills_performance`, `skills_persuasion`, `skills_religion`, `skills_sleightofhand`, `skills_stealth`, `skills_survival`, `Character_char_name`, `Character_char_playername`) VALUES (:acro, :anim, :arc, :athl, :decep, :hist, :ins, :int, :inv, :med, :nat, :perc, :perf, :pers, :rel, :sleight, :stealth, :surv, :name, :login);");
 
         $query->bindParam(":name", $this->charName);
         $query->bindParam(":login", $this->charPlayer);
@@ -205,7 +205,7 @@ class Character{
 
     private function insertAttacks($con){
 
-        $query = $con->prepare("INSERT INTO `web`.`Attacks` (`attack_charname`, `attack_charplayername`, `attack_name`, `attack_attack`, `attack_damage`, `attack_range`, `attack_ammo`, `attack_used`) VALUES (:charName, :login, :name, :atk, :dam, :range, :ammo, :used);");
+        $query = $con->prepare("INSERT INTO `web`.`Attacks` (`attack_name`, `attack_attack`, `attack_damage`, `attack_range`, `attack_ammo`, `attack_used`, `Character_char_name`, `Character_char_playername`) VALUES (:name, :atk, :dam, :range, :ammo, :used, :charName, :login);");
 
         $aux = true;
 
@@ -226,7 +226,7 @@ class Character{
 
     private function insertFeatsAndTraits($con){
 
-        $query = $con->prepare("INSERT INTO `web`.`Features` (`features_charname`, `features_charplayername`, `features_information`) VALUES (:name, :login, :info);");
+        $query = $con->prepare("INSERT INTO `web`.`Features` (`features_information`, `Character_char_name`, `Character_char_playername`) VALUES (:info, :name, :login);");
 
         $query->bindParam(":name", $this->charName);
         $query->bindParam(":login", $this->charPlayer);
@@ -236,9 +236,9 @@ class Character{
     }
 
     private function insertProfAndLang($con){
-        
-        $query = $con->prepare("INSERT INTO `web`.`ProfAndLang` (`profandlang_charname`, `profandlang_charplayername`, `profandlang_information`) VALUES (:name, :login, :info);");
-        
+  
+        $query = $con->prepare("INSERT INTO `web`.`ProfAndLang` (`profandlang_information`, `Character_char_name`, `Character_char_playername`) VALUES (:info, :name, :login);");
+
         $query->bindParam(":name", $this->charName);
         $query->bindParam(":login", $this->charPlayer);
         $query->bindParam(":info", $this->profAndLang);
@@ -248,7 +248,7 @@ class Character{
 
     private function insertEquips($con){
 
-        $query = $con->prepare("INSERT INTO `web`.`InventAndEquip` (`equip_charname`, `equip_charplayername`, `equip_c`, `equip_s`, `equip_e`, `equip_g`, `equip_p`, `equip_information`) VALUES (:name, :login, :c, :s, :e, :g, :p, :info);");
+        $query = $con->prepare("INSERT INTO `web`.`InventAndEquip` (`equip_c`, `equip_s`, `equip_e`, `equip_g`, `equip_p`, `equip_information`, `Character_char_name`, `Character_char_playername`) VALUES (:c, :s, :e, :g, :p, :info, :name, :login);");
 
         $query->bindParam(":name", $this->charName);
         $query->bindParam(":login", $this->charPlayer);
@@ -282,12 +282,12 @@ class Character{
 
         $query = $con->prepare("SELECT `char_level`, `char_class`, `char_background`, `char_exppoints`, `char_alignment`, `char_advgroup` FROM `web`.`Character` WHERE `char_playername`=:player AND `char_name`=:name");
 
+
         $query->bindParam(":player", $this->charPlayer);
         $query->bindParam(":name", $this->charName);
 
         if($query->execute()){
             while($row = $query->fetch()){
-
                 $this->charLevel = $row['char_level'];
                 $this->charRace = $row['char_class'];
                 $this->charBack = $row['char_background'];
@@ -303,7 +303,7 @@ class Character{
 
     private function getAttributesInfos($con){
 
-        $query = $con->prepare("SELECT `att_strength`, `att_dexterity`, `att_constituition`, `att_intelligence`, `att_wisdom`, `att_charisma`, `att_inspiration`, `att_proficiencybonus`, `att_passiveperception` FROM `web`.`Attributes` WHERE  `att_charname`=:name AND `att_charplayername`=:player");
+        $query = $con->prepare("SELECT `att_strength`, `att_dexterity`, `att_constituition`, `att_intelligence`, `att_wisdom`, `att_charisma`, `att_inspiration`, `att_proficiencybonus`, `att_passiveperception` FROM `web`.`Attributes` WHERE  `Character_char_name`=:name AND `Character_char_playername`=:player");
 
         $query->bindParam(":player", $this->charPlayer);
         $query->bindParam(":name", $this->charName);
@@ -324,7 +324,7 @@ class Character{
 
     private function getSavingThrows($con){
 
-        $query = $con->prepare("SELECT `sv_strength`, `sv_dexterity`, `sv_constituition`, `sv_intelligence`, `sv_wisdom`, `sv_charisma` FROM `web`.`SavingThrows` WHERE `sv_charname`=:name AND `sv_charplayername`=:player");
+        $query = $con->prepare("SELECT `sv_strength`, `sv_dexterity`, `sv_constituition`, `sv_intelligence`, `sv_wisdom`, `sv_charisma` FROM `web`.`SavingThrows` WHERE `Character_char_name`=:name AND `Character_char_playername`=:player");
 
         $query->bindParam(":player", $this->charPlayer);
         $query->bindParam(":name", $this->charName);
@@ -341,7 +341,7 @@ class Character{
 
     private function getSkills($con){
         
-        $query = $con->prepare("SELECT `skills_acrobatics`, `skills_animalhand`, `skills_arcana`, `skills_athletics`, `skills_decepticon`, `skills_history`, `skills_insight`, `skills_intimidation`, `skills_investigation`, `skills_medicine`, `skills_nature`, `skills_percepticon`, `skills_performance`, `skills_persuasion`, `skills_religion`, `skills_sleightofhand`, `skills_stealth`, `skills_survival` FROM `web`.`Skills` WHERE `skills_charname`=:name AND `skills_charplayername`=:player");
+        $query = $con->prepare("SELECT `skills_acrobatics`, `skills_animalhand`, `skills_arcana`, `skills_athletics`, `skills_decepticon`, `skills_history`, `skills_insight`, `skills_intimidation`, `skills_investigation`, `skills_medicine`, `skills_nature`, `skills_percepticon`, `skills_performance`, `skills_persuasion`, `skills_religion`, `skills_sleightofhand`, `skills_stealth`, `skills_survival` FROM `web`.`Skills` WHERE `Character_char_name`=:name AND `Character_char_playername`=:player");
 
         $query->bindParam(":player", $this->charPlayer);
         $query->bindParam(":name", $this->charName);
@@ -358,7 +358,7 @@ class Character{
 
     private function getStatus($con){
 
-        $query = $con->prepare("SELECT `status_currenthitpoints`, `status_armorclass`, `status_maxhp`, `status_temphp`, `status_initiate`, `status_speed`, `status_vision` FROM `web`.`Status` WHERE `status_charname`=:name AND `status_charplayername`=:player");
+        $query = $con->prepare("SELECT `status_currenthitpoints`, `status_armorclass`, `status_maxhp`, `status_temphp`, `status_initiate`, `status_speed`, `status_vision` FROM `web`.`Status` WHERE `Character_char_name`=:name AND `Character_char_playername`=:player");
 
         $query->bindParam(":player", $this->charPlayer);
         $query->bindParam(":name", $this->charName);
@@ -375,7 +375,7 @@ class Character{
 
     private function getAttacks($con){
 
-        $query = $con->prepare("SELECT `attack_name`, `attack_attack`, `attack_damage`, `attack_range`, `attack_ammo`, `attack_used` FROM `web`.`Attacks` WHERE `attack_charname`=:name AND `attack_charplayername`=:player");
+        $query = $con->prepare("SELECT `attack_name`, `attack_attack`, `attack_damage`, `attack_range`, `attack_ammo`, `attack_used` FROM `web`.`Attacks` WHERE `Character_char_name`=:name AND `Character_char_playername`=:player");
 
         $query->bindParam(":player", $this->charPlayer);
         $query->bindParam(":name", $this->charName);
@@ -395,7 +395,7 @@ class Character{
 
     private function getFeatAndTraits($con){
 
-        $query = $con->prepare("SELECT `features_information` FROM `web`.`Features` WHERE `features_charname`=:name AND `features_charplayername`=:player");
+        $query = $con->prepare("SELECT `features_information` FROM `web`.`Features` WHERE `Character_char_name`=:name AND `Character_char_playername`=:player");
 
         $query->bindParam(":player", $this->charPlayer);
         $query->bindParam(":name", $this->charName);
@@ -412,7 +412,7 @@ class Character{
 
     private function getProfAndLang($con){
 
-        $query = $con->prepare("SELECT `profandlang_information` FROM `web`.`ProfAndLang` WHERE `profandlang_charname`=:name AND `profandlang_charplayername`=:player");
+        $query = $con->prepare("SELECT `profandlang_information` FROM `web`.`ProfAndLang` WHERE `Character_char_name`=:name AND `Character_char_playername`=:player");
 
         $query->bindParam(":player", $this->charPlayer);
         $query->bindParam(":name", $this->charName);
@@ -429,7 +429,7 @@ class Character{
 
     private function getEquips($con){
 
-        $query = $con->prepare("SELECT `equip_c`, `equip_s`, `equip_e`, `equip_g`, `equip_p`, `equip_information` FROM `web`.`InventAndEquip` WHERE `equip_charname`=:name AND `equip_charplayername`=:player");
+        $query = $con->prepare("SELECT `equip_c`, `equip_s`, `equip_e`, `equip_g`, `equip_p`, `equip_information` FROM `web`.`InventAndEquip` WHERE `Character_char_name`=:name AND `Character_char_playername`=:player");
 
         $query->bindParam(":player", $this->charPlayer);
         $query->bindParam(":name", $this->charName);

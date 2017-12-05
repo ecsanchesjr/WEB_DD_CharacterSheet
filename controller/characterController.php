@@ -6,7 +6,6 @@
 
     if(isset($_POST["charData"])){
         $data = $_POST["charData"];
-        unset($_POST);
     }
 
     switch($tag){
@@ -17,7 +16,10 @@
         break;
 
         case "delete":
-
+            $char = new Character;
+            $char->charPlayer = $_SESSION['userLogin'];
+            $char->charName = $_POST['charName'];
+            $char->deleteChar();
         break;
 
         case "roll":
@@ -35,10 +37,13 @@
 
         case "update";
             $char = new Character;
-            getCharInfos($char, $data);
+            $char->charPlayer = $_SESSION['userLogin'];
+            $char->charName = $_POST['charName'];
             $char->deleteChar();
+            unset($char);
+            $char = new Character;
+            getCharInfos($char, $data);
             $char->addNewChar();
-            print_r($char);
         break;
     }
 

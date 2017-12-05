@@ -14,9 +14,13 @@ function sendInfos() {
         $.post("../controller/characterController.php",
             {
                 actionTag: 'update',
+                charName: getCookie("charName"),
                 charData: getJson()
             }, function (data, status) {
-                console.log(data);
+                $("#result").html("Character updated!");
+                $("#confirm").modal({
+                    showClose: false
+                });
             });
     } else {
         $.post("../controller/characterController.php",
@@ -24,7 +28,10 @@ function sendInfos() {
                 actionTag: 'send',
                 charData: getJson()
             }, function (data, status) {
-                console.log(data);
+                $("#result").html("Character created!");
+                $("#confirm").modal({
+                    showClose: false
+                });
             });
     }
 }

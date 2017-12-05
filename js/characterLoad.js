@@ -20,8 +20,6 @@ function getOne(array){
 }
 
 function setAllData(json){
-    console.log(json);
-
     set("input_charNome", json.charName);
     set("input_charLevel", json.charLevel);
     set("input_charRace", json.charRace);

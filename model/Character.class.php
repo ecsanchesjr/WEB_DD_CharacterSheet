@@ -113,12 +113,12 @@ class Character{
         return($query->execute());
     }
 
-    public function deleteChar($name, $user){
+    public function deleteChar(){
         $con = startCon();
 
         $query = $con->prepare("DELETE FROM `web`.`Character` WHERE `char_name` = :name AND `char_playername` = :user;");
-        $query->bindParam(":name", $name);
-        $query->bindParam(":user", $user);
+        $query->bindParam(":name", $this->charName);
+        $query->bindParam(":user", $this->charPlayer);
 
         return($query->execute());
     }

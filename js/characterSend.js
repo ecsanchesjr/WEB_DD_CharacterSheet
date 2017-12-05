@@ -10,13 +10,23 @@ function get(name) {
 }
 
 function sendInfos() {
-    $.post("../controller/characterController.php",
-        {
-            actionTag: 'send',
-            charData: getJson()
-        }, function (data, status) {
-            console.log(data);
-        });
+    if (getCookie("load") == "true") {
+        $.post("../controller/characterController.php",
+            {
+                actionTag: 'update',
+                charData: getJson()
+            }, function (data, status) {
+                console.log(data);
+            });
+    } else {
+        $.post("../controller/characterController.php",
+            {
+                actionTag: 'send',
+                charData: getJson()
+            }, function (data, status) {
+                console.log(data);
+            });
+    }
 }
 
 function getJson() {
@@ -79,7 +89,7 @@ function getFeatures() {
 }
 
 function getProficiencies() {
-    var rows = 5;
+    var rows = 9;
     var str = "";
 
     for (j = 1; j <= rows; j++) {
@@ -106,7 +116,7 @@ function getEquipInfos() {
     return (str);
 }
 
-function getStatus(){
+function getStatus() {
     var json = {
         armor: get("input_armor"),
         maxHp: get("input_maxHp"),
@@ -116,10 +126,10 @@ function getStatus(){
         speed: get("input_statusSpeed"),
         vision: get("input_statusVision")
     }
-    return(json);
+    return (json);
 }
 
-function getEquips(){
+function getEquips() {
     var json = {
         info: getEquipInfos(),
         c: get("input_equipamentC"),
@@ -128,10 +138,10 @@ function getEquips(){
         g: get("input_equipamentG"),
         p: get("input_equipamentP")
     }
-    return(json);
+    return (json);
 }
 
-function getSkills(){
+function getSkills() {
     var json = {
         acrobatics: get("input_skillAcrobatics"),
         animalHand: get("input_skillAnimalHandling"),
@@ -152,22 +162,22 @@ function getSkills(){
         stealth: get("input_skillStealth"),
         survival: get("input_skillSurvival")
     }
-    return(json);
+    return (json);
 }
 
-function getSavThrows(){
+function getSavThrows() {
     var json = {
         strenght: get("input_savStr"),
         dexterity: get("input_savDex"),
         constituition: get("input_savCon"),
         intelligence: get("input_savInt"),
         wisdom: get("input_savWis"),
-        charisma: get("input_savCha") 
+        charisma: get("input_savCha")
     }
-    return(json);
+    return (json);
 }
 
-function getAttributes(){
+function getAttributes() {
     var json = {
         strenght: get("input_atribStr"),
         dexterity: get("input_atribDex"),
@@ -176,5 +186,5 @@ function getAttributes(){
         wisdom: get("input_atribWis"),
         charisma: get("input_atribCha")
     }
-    return(json);
+    return (json);
 }

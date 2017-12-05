@@ -18,8 +18,9 @@
         case 'delete':
             
             $char = new Character();
-            
-            echo $char->deleteChar($_POST['charName'], $_SESSION['userLogin']);
+            $char->charName = $_POST['charName'];
+            $char->charPlayer = $_SESSION['userLogin'];
+            echo $char->deleteChar();
 
         break;
     }

@@ -14,7 +14,6 @@
             $char = new Character;
             getCharInfos($char, $data);
             $char->addNewChar();
-            print_r($char);
         break;
 
         case "delete":
@@ -32,6 +31,14 @@
             $char->charName = $_POST['charName'];
             $char->getCharInfos();
             echo json_encode($char);
+        break;
+
+        case "update";
+            $char = new Character;
+            getCharInfos($char, $data);
+            $char->deleteChar();
+            $char->addNewChar();
+            print_r($char);
         break;
     }
 

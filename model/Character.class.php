@@ -59,6 +59,17 @@ class Character{
         }
     }
 
+    public function verifyUniqueChar(){
+        $con = startCon();
+
+        $query = $con->prepare("SELECT * FROM `web`.`Character` WHERE `char_name`=:name");
+        $query->bindParam(":name", $this->charName);
+        
+        $query->execute();
+
+        return($query->rowCount() == 0);
+    }
+
     // ADD NEW CHAR METHODS
     public function addNewChar(){
         $con = startCon();

@@ -11,8 +11,16 @@
     switch($tag){
         case "send":
             $char = new Character;
-            getCharInfos($char, $data);
-            $char->addNewChar();
+            $char->charName = $_POST['charName'];
+
+            if($char->verifyUniqueChar()){
+                getCharInfos($char, $data);    
+                $char->addNewChar();
+                echo "ok";
+            }else{
+                echo "duplicated";
+            }
+
         break;
 
         case "delete":
@@ -38,15 +46,36 @@
         case "update";
             $char = new Character;
             $char->charPlayer = $_SESSION['userLogin'];
-            $char->charName = $_POST['charName'];
-            $char->deleteChar();
-            unset($char);
-            $char = new Character;
-            getCharInfos($char, $data);
-            $char->addNewChar();
+            $char->charName = $_POST['charNewName'];
+
+            if($_POST['charNewName'] != $_POST['charName']){
+                if($char->verifyUniqueChar()){
+                    unset($char);
+                    $char = new Character;
+                    $char->charPlayer = $_SESSION['userLogin'];
+                    $char->charName = $_POST['charName'];
+                    $char->deleteChar();
+                    unset($char);
+                    $char = new Character;
+                    getCharInfos($char, $data);
+                    $char->addNewChar();
+                    echo "ok";
+                }else{
+                    echo "duplicated";
+                }
+            }else{
+                $char = new Character;
+                $char->charPlayer = $_SESSION['userLogin'];
+                $char->charName = $_POST['charName'];
+                $char->deleteChar();
+                unset($char);
+                $char = new Character;
+                getCharInfos($char, $data);
+                $char->addNewChar();
+                echo "ok";
+            }
         break;
     }
-
 
     function getCharInfos($char, $data){
         $char->charName = $data['charName'];

@@ -15,23 +15,51 @@ function sendInfos() {
             {
                 actionTag: 'update',
                 charName: getCookie("charName"),
+                charNewName: get("input_charNome"),
                 charData: getJson()
             }, function (data, status) {
-                $("#result").html("Character updated!");
-                $("#confirm").modal({
-                    showClose: false
-                });
+                console.log(data);
+                if(data == "ok"){
+                    $("#result").html("Character updated");
+                    $("#confirm").modal({
+                        showClose: false
+                    });
+                }else if(~data.indexOf("duplicated")){
+                    $("#result").html("Character name already used!");
+                    $("#confirm").modal({
+                        showClose: false
+                    });
+                }else{
+                    $("#result").html("Error ocurred, try to create again!");
+                    $("#confirm").modal({
+                        showClose: false
+                    });
+                }
             });
     } else {
         $.post("../controller/characterController.php",
             {
                 actionTag: 'send',
+                charName: get("input_charNome"),
                 charData: getJson()
             }, function (data, status) {
-                $("#result").html("Character created!");
-                $("#confirm").modal({
-                    showClose: false
-                });
+                console.log(data);
+                if(data == "ok"){
+                    $("#result").html("Character created!");
+                    $("#confirm").modal({
+                        showClose: false
+                    });
+                }else if(~data.indexOf("duplicated")){
+                    $("#result").html("Character name already used!");
+                    $("#confirm").modal({
+                        showClose: false
+                    });
+                }else{
+                    $("#result").html("Error ocurred, try to create again!");
+                    $("#confirm").modal({
+                        showClose: false
+                    });
+                }
             });
     }
 }

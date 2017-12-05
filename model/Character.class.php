@@ -62,8 +62,9 @@ class Character{
     public function verifyUniqueChar(){
         $con = startCon();
 
-        $query = $con->prepare("SELECT * FROM `web`.`Character` WHERE `char_name`=:name");
+        $query = $con->prepare("SELECT * FROM `web`.`Character` WHERE `char_name`=:name AND `char_player`=:login");
         $query->bindParam(":name", $this->charName);
+        $query->bindParam(":login", $this->charLogin);
         
         $query->execute();
 
